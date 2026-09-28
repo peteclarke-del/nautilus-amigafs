@@ -39,8 +39,13 @@ def configure_command(command: list[str]) -> None:
 
 
 def _local_path(file_info: Any) -> Path | None:
-    if file_info.get_uri_scheme() != "file":
-        return None
+    """Return where the file can be opened by name, or ``None`` when it cannot.
+
+    A file on a network share has a scheme such as ``smb`` but is still
+    reachable by name where the desktop mounts the share, so the scheme does
+    not decide. A location with no such name has no path.
+    """
+
     location = file_info.get_location()
     path = location.get_path() if location is not None else None
     return Path(path) if path else None
