@@ -30,6 +30,10 @@ file that AmigaFS did not generate.
    Amiga. An Acorn `.adf`, a PC `.rom` or an empty file gets no menu.
 3. **Capabilities.** The menu shows the actions that kind of source supports.
 
+A file on a network share is offered the same menu, provided the desktop
+makes the share reachable by name, as it does for Windows shares under
+`/run/user/UID/gvfs`. The header is then read over the network.
+
 `.img`, `.raw` and `.dsk` are not claimed, because most such files are not
 Amiga media. They can still be opened by name with `amigafs mount`.
 
