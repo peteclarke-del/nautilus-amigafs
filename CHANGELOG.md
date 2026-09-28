@@ -5,6 +5,15 @@ All notable changes to Nautilus AmigaFS are recorded here. The project follows
 
 ## Unreleased
 
+## 0.1.1 - 2026-09-28
+
+### Fixed
+
+- Files offers the menu and the Properties page for an image on a network
+  share. The extension used to ignore every file whose address did not begin
+  `file:`, which left out Windows shares opened in Files although the image
+  could be inspected and mounted by name.
+
 ## 0.1.0 - 2026-09-28
 
 The first release. It was started from the platform-neutral parts of

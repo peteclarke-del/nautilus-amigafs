@@ -124,7 +124,7 @@ def test_image_actions_are_collapsed_under_one_support_menu(
         assert item.label and item.tip and item.icon.endswith("-symbolic")
 
 
-def test_selection_of_several_files_or_a_remote_file_offers_nothing(
+def test_selection_of_several_files_or_a_file_with_no_path_offers_nothing(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
     extension = _load_extension(monkeypatch)
@@ -133,7 +133,20 @@ def test_selection_of_several_files_or_a_remote_file_offers_nothing(
     assert provider.get_file_items([image, image]) == []
     remote = _FileInfo(tmp_path / "remote.adf")
     remote.get_uri_scheme = lambda: "sftp"  # type: ignore[method-assign]
+    remote.get_location = lambda: SimpleNamespace(get_path=lambda: None)  # type: ignore[method-assign]
     assert provider.get_file_items([remote]) == []
+    remote.get_location = lambda: None  # type: ignore[method-assign]
+    assert provider.get_file_items([remote]) == []
+
+
+def test_an_image_on_a_network_share_is_offered_the_menu(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    extension = _load_extension(monkeypatch)
+    shared = _FileInfo(create_floppy(tmp_path))
+    shared.get_uri_scheme = lambda: "smb"  # type: ignore[method-assign]
+    provider = extension.AmigaFSMenuProvider()
+    assert len(provider.get_file_items([shared])) == 1
 
 
 def test_image_actions_launch_shell_free_desktop_commands(
