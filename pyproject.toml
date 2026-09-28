@@ -1,0 +1,90 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nautilus-amigafs"
+version = "0.1.0"
+description = "A safe userspace filesystem for Commodore Amiga discs and disk images"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Pete Clarke" }]
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "build>=1.2,<2",
+    "mypy>=1.15,<2",
+    "pytest>=8.3,<9",
+    "ruff>=0.11,<1",
+    "setuptools>=77",
+    "wheel",
+]
+fuse = [
+    "pyfuse3>=3.5,<4",
+    "trio>=0.22,<1",
+]
+fuzz = [
+    "atheris>=3,<4; platform_system == 'Linux' and platform_machine == 'x86_64'",
+]
+release = [
+    "build==1.5.0",
+    "cyclonedx-bom==7.3.1",
+    "setuptools==83.0.0",
+    "wheel==0.47.0",
+]
+
+[project.scripts]
+amigafs = "amigafs.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+amigafs = [
+    "locale/*/LC_MESSAGES/*.mo",
+    "_vendor/VENDORED.json",
+    "_vendor/VENDORED.md",
+    "_vendor/LICENSE.amiga-file-forge",
+    "_vendor/patches/*.patch",
+]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = ["src/amigafs/_vendor"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+packages = ["amigafs"]
+
+[[tool.mypy.overrides]]
+module = ["gi", "gi.*", "pyfuse3", "pyfuse3.*"]
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "amigafs.fuse_adapter.operations"
+disable_error_code = ["misc"]
+
+[[tool.mypy.overrides]]
+module = ["amigafs._vendor.*"]
+ignore_errors = true
+follow_imports = "silent"
+
+[[tool.mypy.overrides]]
+module = ["amigafs.core.media", "amigafs.core.bitmap", "amigafs.core.ranged"]
+disallow_untyped_calls = false
+
+[[tool.mypy.overrides]]
+module = "amigafs_nautilus.extension"
+disable_error_code = ["misc"]

@@ -1,0 +1,17 @@
+# Optional: let the logged-in desktop user open USB and SD/MMC discs directly,
+# so AmigaFS does not need to ask for administrator authentication.
+#
+# This is not installed by the package. It gives the active local user raw
+# access to every removable disc attached to the machine, not only Amiga ones.
+# Install it only on a machine where that is acceptable:
+#
+#   sudo install -m 0644 70-amigafs-removable-discs.rules /etc/udev/rules.d/
+#   sudo udevadm control --reload
+#
+# then unplug the disc and attach it again.
+ACTION=="remove", GOTO="amigafs_end"
+SUBSYSTEM!="block", GOTO="amigafs_end"
+ENV{DEVTYPE}!="disk", GOTO="amigafs_end"
+KERNEL=="sd[a-z]*", SUBSYSTEMS=="usb", TAG+="uaccess"
+KERNEL=="mmcblk[0-9]*", ATTR{removable}=="1", TAG+="uaccess"
+LABEL="amigafs_end"

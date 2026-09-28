@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC
+ "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN"
+ "http://www.freedesktop.org/standards/PolicyKit/1/policyconfig.dtd">
+<policyconfig>
+  <vendor>Nautilus AmigaFS</vendor>
+  <vendor_url>https://github.com/peteclarke-del/nautilus-amigafs</vendor_url>
+  <action id="org.amigafs.open-physical-disc">
+    <description>Open a removable Amiga disc</description>
+    <description xml:lang="en_GB">Open a removable Amiga disc</description>
+    <message>Authentication is required for AmigaFS to open a removable Amiga disc</message>
+    <message xml:lang="en_GB">Authentication is required for AmigaFS to open a removable Amiga disc</message>
+    <icon_name>drive-removable-media</icon_name>
+    <defaults>
+      <allow_any>auth_admin</allow_any>
+      <allow_inactive>auth_admin</allow_inactive>
+      <allow_active>auth_admin_keep</allow_active>
+    </defaults>
+    <annotate key="org.freedesktop.policykit.exec.path">/usr/libexec/amigafs/amigafs-device-helper</annotate>
+    <annotate key="org.freedesktop.policykit.exec.allow_gui">false</annotate>
+  </action>
+</policyconfig>
