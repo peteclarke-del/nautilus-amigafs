@@ -5,8 +5,9 @@ All notable changes to Nautilus AmigaFS are recorded here. The project follows
 
 ## Unreleased
 
-Nothing has been released yet. Everything below is the initial implementation,
-started from the platform-neutral parts of
+## 0.1.0 - 2026-09-28
+
+The first release. It was started from the platform-neutral parts of
 [Nautilus AcornFS](https://github.com/peteclarke-del/nautilus-acornfs) 0.2.0.
 
 ### Added
