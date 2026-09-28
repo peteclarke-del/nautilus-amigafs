@@ -1,0 +1,143 @@
+diff -ruN -x amigados.py a/amiganut/filesystem/blocks.py b/amiganut/filesystem/blocks.py
+--- a/amiganut/filesystem/blocks.py	2026-09-28 00:07:10.906873501 +0100
++++ b/amiganut/filesystem/blocks.py	2026-09-28 00:07:10.912873518 +0100
+@@ -397,14 +397,38 @@
+             self._handle.flush()
+             os.fsync(self._handle.fileno())
+ 
+-    def window(self, offset_blocks: int, length_blocks: int) -> "BlockReader":
+-        """Open a nested reader for one partition of this device."""
++    def reopen(
++        self,
++        *,
++        writable: bool | None = None,
++        offset: int | None = None,
++        length: int | None = None,
++        block_size: int | None = None,
++    ) -> "BlockReader":
++        """Open another reader onto the same medium.
++
++        ``offset`` is absolute, in bytes from the start of the medium. Every
++        driver that needs a second view of its medium asks for it here, so a
++        reader backed by something other than a named file can supply a view
++        of the same backing store.
++        """
+         return BlockReader(
+             self.path,
+-            writable=self.writable,
++            writable=self.writable if writable is None else writable,
++            offset=self.offset if offset is None else offset,
++            length=self.length if length is None else length,
++            block_size=self.block_size if block_size is None else block_size,
++        )
++
++    def read_all(self) -> bytes:
++        """Return every byte of this window."""
++        return self.read_range(0, self.length)
++
++    def window(self, offset_blocks: int, length_blocks: int) -> "BlockReader":
++        """Open a nested reader for one partition of this device."""
++        return self.reopen(
+             offset=self.offset + offset_blocks * self.block_size,
+             length=length_blocks * self.block_size,
+-            block_size=self.block_size,
+         )
+ 
+ 
+diff -ruN -x amigados.py a/amiganut/filesystem/__init__.py b/amiganut/filesystem/__init__.py
+--- a/amiganut/filesystem/__init__.py	2026-09-28 00:07:10.906873501 +0100
++++ b/amiganut/filesystem/__init__.py	2026-09-28 00:07:10.911873515 +0100
+@@ -646,12 +646,10 @@
+             writable = self.reader.writable
+         # A read-only window must not hold a writable handle, so the window is
+         # opened with the access it will keep rather than adjusted afterwards.
+-        window = BlockReader(
+-            self.reader.path,
++        window = self.reader.reopen(
+             writable=bool(writable) and self.reader.writable,
+             offset=self.reader.offset + partition.start_block * self.reader.block_size,
+             length=partition.total_blocks * self.reader.block_size,
+-            block_size=self.reader.block_size,
+         )
+         if partition.dos_type == SFS_ID:
+             return SFSMount(SFSVolume(window))
+@@ -698,7 +696,7 @@
+ 
+ 
+ def _whole_image(reader: BlockReader) -> bytes:
+-    return reader.path.read_bytes()
++    return reader.read_all()
+ 
+ 
+ SUFFIX_HINTS = {
+diff -ruN -x amigados.py a/amiganut/filesystem/pfs3.py b/amiganut/filesystem/pfs3.py
+--- a/amiganut/filesystem/pfs3.py	2026-09-28 00:07:10.906873501 +0100
++++ b/amiganut/filesystem/pfs3.py	2026-09-28 00:07:10.912873518 +0100
+@@ -147,9 +147,7 @@
+         self.sector_reader = reader
+         self.writable = reader.writable
+         self.block_size, base, length = self._find_root(reader)
+-        self.blocks = BlockReader(
+-            reader.path,
+-            writable=reader.writable,
++        self.blocks = reader.reopen(
+             offset=base,
+             length=length,
+             block_size=self.block_size,
+diff -ruN -x amigados.py a/amiganut/filesystem/pfs3_write.py b/amiganut/filesystem/pfs3_write.py
+--- a/amiganut/filesystem/pfs3_write.py	2026-09-28 00:07:10.907873504 +0100
++++ b/amiganut/filesystem/pfs3_write.py	2026-09-28 00:07:10.912873518 +0100
+@@ -1049,7 +1049,7 @@
+         raise DataError("The partition is too large for PFS3, which stops at about 1.6 TB.")
+     base = -(-reader.offset // block_size) * block_size
+     end = (reader.offset + reader.length) // block_size * block_size
+-    blocks = BlockReader(reader.path, writable=True, offset=base, length=end - base, block_size=block_size)
++    blocks = reader.reopen(writable=True, offset=base, length=end - base, block_size=block_size)
+     try:
+         _format(blocks, name, sectors, fnsize, deldir_blocks)
+     finally:
+diff -ruN -x amigados.py a/amiganut/filesystem/sfs.py b/amiganut/filesystem/sfs.py
+--- a/amiganut/filesystem/sfs.py	2026-09-28 00:07:10.907873504 +0100
++++ b/amiganut/filesystem/sfs.py	2026-09-28 00:07:10.912873518 +0100
+@@ -100,13 +100,7 @@
+         self.root = self._select_root(reader, block_size)
+         self.block_size = long_at(self.root, 0x34)
+         self.total_blocks = long_at(self.root, 0x30)
+-        self.blocks = BlockReader(
+-            reader.path,
+-            writable=reader.writable,
+-            offset=reader.offset,
+-            length=reader.length,
+-            block_size=self.block_size,
+-        )
++        self.blocks = reader.reopen(block_size=self.block_size)
+         if self.blocks.total_blocks < self.total_blocks:
+             self.blocks.close()
+             raise DataError(
+diff -ruN -x amigados.py a/amiganut/filesystem/sfs_write.py b/amiganut/filesystem/sfs_write.py
+--- a/amiganut/filesystem/sfs_write.py	2026-09-28 00:07:10.907873504 +0100
++++ b/amiganut/filesystem/sfs_write.py	2026-09-28 00:07:10.912873518 +0100
+@@ -1173,10 +1173,7 @@
+         raise DataError("An SFS volume name can be at most 30 characters long.")
+     if block_size < 512 or block_size & (block_size - 1) or block_size % reader.block_size:
+         raise DataError("The SFS block size must be a power of two of at least 512 bytes.")
+-    blocks = BlockReader(
+-        reader.path, writable=True, offset=reader.offset,
+-        length=reader.length, block_size=block_size,
+-    )
++    blocks = reader.reopen(writable=True, block_size=block_size)
+     try:
+         total = blocks.total_blocks
+         per_page = (block_size - HEADER_SIZE) * 8
+diff -ruN -x amigados.py a/amiganut/kickfs/kickfs.py b/amiganut/kickfs/kickfs.py
+--- a/amiganut/kickfs/kickfs.py	2026-09-28 00:07:10.907873504 +0100
++++ b/amiganut/kickfs/kickfs.py	2026-09-28 00:07:10.913873521 +0100
+@@ -415,7 +415,7 @@
+ 
+     def __init__(self, reader):
+         self.reader = reader
+-        self.rom = Kickstart(reader.path.read_bytes())
++        self.rom = Kickstart(reader.read_all())
+         self.filesystem = "kickfs"
+         self.read_only = True
+ 

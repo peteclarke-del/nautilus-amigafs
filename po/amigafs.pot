@@ -1,0 +1,2677 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-28 01:37+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: src/amigafs/desktop.py:1312
+msgid ""
+"\n"
+"\n"
+"AMIGAFS_MOUNT_ROOT still overrides this preference for the current environment."
+msgstr ""
+
+#: src/amigafs/desktop.py:1281
+msgid ""
+"\n"
+"The saved preference is invalid; saving will replace it."
+msgstr ""
+
+#: src/amigafs/core/repair.py:113
+#, python-brace-format
+msgid "   Findings: {findings}"
+msgstr ""
+
+#: src/amigafs/core/repair.py:116
+#, python-brace-format
+msgid "   Paths: {paths}"
+msgstr ""
+
+#: src/amigafs/desktop.py:1474
+#, python-brace-format
+msgid " (+{count} more)"
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:158
+#, python-brace-format
+msgid " ({problems}, {advice})"
+msgstr ""
+
+#: src/amigafs/greaseweazle.py:424
+msgid " The physical floppy may be incomplete; do not rely on its contents."
+msgstr ""
+
+#: src/amigafs/core/validation.py:150
+#, python-brace-format
+msgid "- [{severity}] {code}{location}: {message}"
+msgstr ""
+
+#: src/amigafs/core/image.py:1304
+#, python-brace-format
+msgid "A damaged structure stopped validation ({kind}: {error})."
+msgstr ""
+
+#: src/amigafs/greaseweazle.py:615
+msgid "A floppy is captured as an .adf image."
+msgstr ""
+
+#: src/amigafs/core/image.py:1002
+msgid "A partition cannot be removed here."
+msgstr ""
+
+#: src/amigafs/core/image.py:1042
+msgid "A partition cannot be renamed here."
+msgstr ""
+
+#: src/amigafs/core/transfer.py:134
+msgid "A path or comment containing a quote cannot be stored in an INF sidecar."
+msgstr ""
+
+#: src/amigafs/safe_paths.py:23
+msgid "A private AmigaFS directory escaped its trusted root."
+msgstr ""
+
+#: src/amigafs/safe_paths.py:25
+msgid "A private AmigaFS directory must be below its trusted root."
+msgstr ""
+
+#: src/amigafs/safe_paths.py:35
+msgid "A private AmigaFS directory name is unsafe."
+msgstr ""
+
+#: src/amigafs/safe_paths.py:97
+msgid "A private AmigaFS state filename is unsafe."
+msgstr ""
+
+#: src/amigafs/preferences.py:61
+msgid "A symbolic link cannot be used as the AmigaFS mount location."
+msgstr ""
+
+#: src/amigafs/recovery.py:426
+#, python-brace-format
+msgid "A working copy from {created_at} was interrupted before it was written back. The source is unchanged. Use --salvage FILE to keep the working copy, then --restore or --discard to remove it."
+msgstr ""
+
+#: src/amigafs/core/blockio.py:371
+msgid "A write was attempted outside an image transaction."
+msgstr ""
+
+#: src/amigafs/core/validation.py:53
+msgid "ADVICE"
+msgstr ""
+
+#: src/amigafs/desktop.py:794
+#, python-brace-format
+msgid ""
+"All existing data on the floppy in drive {drive} will be overwritten.\n"
+"\n"
+"Write and verify {image}?"
+msgstr ""
+
+#: src/amigafs/greaseweazle.py:512
+msgid "All tracks written and verified."
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:69
+msgid "Amiga FS Support"
+msgstr ""
+
+#: src/amigafs/file_forge.py:76
+msgid "Amiga File Forge cannot open this kind of source."
+msgstr ""
+
+#: src/amigafs/core/image.py:714
+msgid "Amiga comments can contain only ISO 8859-1 (Latin-1) characters"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:414
+msgid "Amiga disk image"
+msgstr ""
+
+#: src/amigafs/core/image.py:159
+msgid "Amiga filenames can contain only ISO 8859-1 (Latin-1) characters"
+msgstr ""
+
+#: src/amigafs/core/image.py:761
+msgid "Amiga filenames cannot begin or end with a space"
+msgstr ""
+
+#: src/amigafs/core/image.py:140
+msgid "Amiga filenames must be valid UTF-8 on the Linux side"
+msgstr ""
+
+#: src/amigafs/core/image.py:765
+#, python-brace-format
+msgid "Amiga filenames on this volume hold at most {maximum} characters"
+msgstr ""
+
+#: src/amigafs/core/image.py:864
+msgid "Amiga files are limited to 4 GiB"
+msgstr ""
+
+#: src/amigafs/core/properties.py:17
+msgid "Amiga floppy image (ADF)"
+msgstr ""
+
+#: src/amigafs/core/properties.py:18
+msgid "Amiga hard-disc image"
+msgstr ""
+
+#: src/amigafs/desktop.py:1264
+msgid "Amiga image created"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:416
+msgid "Amiga metadata"
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:182
+msgid "Amiga path"
+msgstr ""
+
+#: src/amigafs/desktop.py:1551 src/amigafs/desktop.py:1563
+msgid "AmigaFS automatic repair refused"
+msgstr ""
+
+#: src/amigafs/desktop.py:676
+msgid "AmigaFS can open only local image URIs."
+msgstr ""
+
+#: src/amigafs/desktop.py:1038
+msgid "AmigaFS disc read cancelled"
+msgstr ""
+
+#: src/amigafs/greaseweazle.py:454
+msgid "AmigaFS does not write this kind of file to a floppy."
+msgstr ""
+
+#: src/amigafs/desktop.py:1391
+msgid "AmigaFS final validation failed"
+msgstr ""
+
+#: src/amigafs/desktop.py:1261
+msgid "AmigaFS image creation failed"
+msgstr ""
+
+#: src/amigafs/desktop.py:1405
+msgid "AmigaFS image detached"
+msgstr ""
+
+#: src/amigafs/desktop.py:510 src/amigafs/desktop.py:643
+msgid "AmigaFS image mounted"
+msgstr ""
+
+#: src/amigafs/desktop.py:1351 src/amigafs/desktop.py:1402
+msgid "AmigaFS image unmounted"
+msgstr ""
+
+#: src/amigafs/desktop.py:1714
+msgid "AmigaFS is writing changes back"
+msgstr ""
+
+#: src/amigafs/desktop.py:639 src/amigafs/desktop.py:1707
+msgid "AmigaFS mount failed"
+msgstr ""
+
+#: src/amigafs/desktop.py:1317
+msgid "AmigaFS mount location saved"
+msgstr ""
+
+#: src/amigafs/desktop.py:1308
+msgid "AmigaFS mount location was not changed"
+msgstr ""
+
+#: src/amigafs/desktop.py:690
+msgid "AmigaFS open failed"
+msgstr ""
+
+#: src/amigafs/desktop.py:1646
+msgid "AmigaFS recovery"
+msgstr ""
+
+#: src/amigafs/desktop.py:1690
+msgid "AmigaFS recovery cancelled"
+msgstr ""
+
+#: src/amigafs/desktop.py:1633 src/amigafs/desktop.py:1700
+msgid "AmigaFS recovery complete"
+msgstr ""
+
+#: src/amigafs/desktop.py:1631 src/amigafs/desktop.py:1698
+msgid "AmigaFS recovery failed"
+msgstr ""
+
+#: src/amigafs/desktop.py:1556
+msgid "AmigaFS repair"
+msgstr ""
+
+#: src/amigafs/desktop.py:1537
+msgid "AmigaFS repair completed"
+msgstr ""
+
+#: src/amigafs/desktop.py:1534
+msgid "AmigaFS repair failed"
+msgstr ""
+
+#: src/amigafs/desktop.py:1374
+msgid "AmigaFS unmount failed"
+msgstr ""
+
+#: src/amigafs/desktop.py:1384
+msgid "AmigaFS unmount not confirmed"
+msgstr ""
+
+#: src/amigafs/desktop.py:1360
+msgid "AmigaFS unmount refused"
+msgstr ""
+
+#: src/amigafs/desktop.py:1453
+msgid "AmigaFS validation cancelled"
+msgstr ""
+
+#: src/amigafs/desktop.py:1456
+msgid "AmigaFS validation failed"
+msgstr ""
+
+#: src/amigafs/desktop.py:1476
+msgid "AmigaFS validation found problems"
+msgstr ""
+
+#: src/amigafs/desktop.py:1488
+msgid "AmigaFS validation passed"
+msgstr ""
+
+#: src/amigafs/core/image.py:718 src/amigafs/core/image.py:929
+#, python-brace-format
+msgid "An Amiga comment holds at most {maximum} printable characters"
+msgstr ""
+
+#: src/amigafs/core/transfer.py:95
+msgid "An INF sidecar must contain a path and its protection bits."
+msgstr ""
+
+#: src/amigafs/core/create.py:232
+#, python-brace-format
+msgid "An image can be created with 1 to {maximum} partitions."
+msgstr ""
+
+#: src/amigafs/core/blockio.py:411
+msgid "An image transaction is already in progress."
+msgstr ""
+
+#: src/amigafs/core/media.py:360 src/amigafs/recovery.py:235
+#: src/amigafs/recovery.py:296
+#, python-brace-format
+msgid "An interrupted writable session needs recovery. Run 'amigafs recover {path}' before mounting read-write."
+msgstr ""
+
+#: src/amigafs/core/repair.py:358
+#, python-brace-format
+msgid "Applying: {action}"
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:128
+msgid "Boot priority"
+msgstr ""
+
+#: src/amigafs/fuse_adapter/runner.py:48
+#, python-brace-format
+msgid "Cannot inspect mountpoint {path}: {error}"
+msgstr ""
+
+#: src/amigafs/mounts.py:170
+#, python-brace-format
+msgid "Cannot read mount status: {error}"
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:108
+msgid "Capacity"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:212
+#, python-brace-format
+msgid "Check {image} without modifying it"
+msgstr ""
+
+#: src/amigafs/core/create.py:173 src/amigafs/core/create.py:223
+#: src/amigafs/desktop.py:1234 src/amigafs/desktop.py:1249
+msgid "Checking image settings…"
+msgstr ""
+
+#: src/amigafs/desktop.py:1449
+msgid "Checking partitions, directories and allocation…"
+msgstr ""
+
+#: src/amigafs/greaseweazle.py:230
+#, python-brace-format
+msgid "Checking physical drive {drive}…"
+msgstr ""
+
+#: src/amigafs/desktop.py:724
+msgid "Checking the connected Greaseweazle drives…"
+msgstr ""
+
+#: src/amigafs/greaseweazle.py:521
+msgid "Choose a floppy density of auto, dd or hd."
+msgstr ""
+
+#: src/amigafs/core/create.py:178
+msgid "Choose a floppy density of dd (880 KiB) or hd (1760 KiB)."
+msgstr ""
+
+#: src/amigafs/recovery.py:422
+msgid "Choose either --restore or --discard, not both."
+msgstr ""
+
+#: src/amigafs/core/create.py:65
+#, python-brace-format
+msgid "Choose one of these filesystems: {choices}."
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:86
+msgid "Choose where future AmigaFS desktop mounts appear"
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:185
+msgid "Comment"
+msgstr ""
+
+#: src/amigafs/core/properties.py:21
+msgid "Compressed Amiga image"
+msgstr ""
+
+#: src/amigafs/core/containers.py:291
+msgid "Compressing the image…"
+msgstr ""
+
+#: src/amigafs/desktop.py:792
+msgid "Confirm physical floppy write"
+msgstr ""
+
+#: src/amigafs/core/disc_transfer.py:137
+#, python-brace-format
+msgid "Confirmation must exactly match the device name: {name}"
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:72 src/amigafs_nautilus/logic.py:88
+msgid "Container"
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:144
+msgid "Contents"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:182
+#, python-brace-format
+msgid "Copy a whole attached disc to an image in {directory}"
+msgstr ""
+
+#: src/amigafs/desktop.py:1435
+#, python-brace-format
+msgid "Could not clean up stale mount {mountpoint}: {detail}"
+msgstr ""
+
+#: src/amigafs/core/create.py:199
+#, python-brace-format
+msgid "Could not create the floppy image: {error}"
+msgstr ""
+
+#: src/amigafs/core/create.py:298
+#, python-brace-format
+msgid "Could not create the hard-disc image: {error}"
+msgstr ""
+
+#: src/amigafs/core/repair.py:334
+#, python-brace-format
+msgid "Could not create the mandatory repair audit: {error}"
+msgstr ""
+
+#: src/amigafs/recovery.py:267 src/amigafs/recovery.py:316
+#, python-brace-format
+msgid "Could not create the writable recovery checkpoint: {error}"
+msgstr ""
+
+#: src/amigafs/core/transfer.py:309
+#, python-brace-format
+msgid "Could not export {path}: {error}"
+msgstr ""
+
+#: src/amigafs/fuse_adapter/operations.py:586
+#, python-brace-format
+msgid "Could not flush pending FUSE data and metadata safely: {error}"
+msgstr ""
+
+#: src/amigafs/mounts.py:89
+#, python-brace-format
+msgid "Could not identify the Amiga image: {error}"
+msgstr ""
+
+#: src/amigafs/core/transfer.py:379
+#, python-brace-format
+msgid "Could not import {name}: {error}"
+msgstr ""
+
+#: src/amigafs/desktop.py:1422
+#, python-brace-format
+msgid "Could not inspect mounted image {mountpoint}: {error}"
+msgstr ""
+
+#: src/amigafs/core/create.py:119
+#, python-brace-format
+msgid "Could not inspect the destination directory: {error}"
+msgstr ""
+
+#: src/amigafs/desktop.py:702
+msgid "Could not open Amiga File Forge"
+msgstr ""
+
+#: src/amigafs/greaseweazle.py:409 src/amigafs/greaseweazle.py:451
+#, python-brace-format
+msgid "Could not open the floppy image: {detail}"
+msgstr ""
+
+#: src/amigafs/recovery.py:342
+#, python-brace-format
+msgid "Could not open {path} to restore it: {error}"
+msgstr ""
+
+#: src/amigafs/greaseweazle.py:484
+#, python-brace-format
+msgid "Could not prepare the floppy image: {detail}"
+msgstr ""
+
+#: src/amigafs/core/create.py:157
+#, python-brace-format
+msgid "Could not publish the image without overwriting: {error}"
+msgstr ""
+
+#: src/amigafs/preferences.py:82
+#, python-brace-format
+msgid "Could not read AmigaFS preferences: {error}"
+msgstr ""
+
+#: src/amigafs/core/disc_transfer.py:112
+#, python-brace-format
+msgid "Could not read the disc: {error}"
+msgstr ""
+
+#: src/amigafs/mounts.py:126
+#, python-brace-format
+msgid "Could not record the active AmigaFS mount: {error}"
+msgstr ""
+
+#: src/amigafs/preferences.py:155
+#, python-brace-format
+msgid "Could not reset AmigaFS preferences: {error}"
+msgstr ""
+
+#: src/amigafs/core/image.py:1373
+#, python-brace-format
+msgid "Could not safely finalise the writable image: {error}"
+msgstr ""
+
+#: src/amigafs/core/image.py:1398
+#, python-brace-format
+msgid "Could not safely write the updated image back: {error}"
+msgstr ""
+
+#: src/amigafs/preferences.py:136
+#, python-brace-format
+msgid "Could not save AmigaFS preferences: {error}"
+msgstr ""
+
+#: src/amigafs/greaseweazle.py:635
+#, python-brace-format
+msgid "Could not save the captured floppy: {error}"
+msgstr ""
+
+#: src/amigafs/recovery.py:402
+#, python-brace-format
+msgid "Could not save the working copy: {error}"
+msgstr ""
+
+#: src/amigafs/file_forge.py:117
+#, python-brace-format
+msgid "Could not start Amiga File Forge: {error}"
+msgstr ""
+
+#: src/amigafs/greaseweazle.py:294
+#, python-brace-format
+msgid "Could not start Greaseweazle: {detail}"
+msgstr ""
+
+#: src/amigafs/core/containers.py:216
+#, python-brace-format
+msgid "Could not start Greaseweazle: {error}"
+msgstr ""
+
+#: src/amigafs/desktop.py:555
+#, python-brace-format
+msgid "Could not start the AmigaFS user service: {detail}"
+msgstr ""
+
+#: src/amigafs/core/devices.py:184
+#, python-brace-format
+msgid "Could not start the device helper: {error}"
+msgstr ""
+
+#: src/amigafs/desktop.py:1376
+#, python-brace-format
+msgid "Could not unmount {mountpoint}: {detail}"
+msgstr ""
+
+#: src/amigafs/core/disc_transfer.py:205
+#, python-brace-format
+msgid "Could not write the disc: {error}. It may be incomplete."
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:96
+#, python-brace-format
+msgid "Create an empty ADF in {directory}"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:106
+#, python-brace-format
+msgid "Create an empty partitioned HDF in {directory}"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:95
+msgid "Create floppy image…"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:105
+msgid "Create hard-disc image…"
+msgstr ""
+
+#: src/amigafs/desktop.py:1265
+#, python-brace-format
+msgid ""
+"Created and verified {name}.\n"
+"\n"
+"Right-click the file to open or validate it."
+msgstr ""
+
+#: src/amigafs/core/create.py:147
+#, python-brace-format
+msgid "Created image failed validation: {code}: {message}"
+msgstr ""
+
+#: src/amigafs/desktop.py:1248
+msgid "Creating Amiga floppy image"
+msgstr ""
+
+#: src/amigafs/desktop.py:1233
+msgid "Creating Amiga hard-disc image"
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:121
+msgid "Cylinders"
+msgstr ""
+
+#: src/amigafs/core/containers.py:619
+msgid "Decoding the image…"
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:79
+msgid "Details"
+msgstr ""
+
+#: src/amigafs/desktop.py:723
+msgid "Detecting physical drives"
+msgstr ""
+
+#: src/amigafs/core/disc_transfer.py:116
+msgid "Disc image saved."
+msgstr ""
+
+#: src/amigafs/core/disc_transfer.py:209
+msgid "Disc written and verified."
+msgstr ""
+
+#: src/amigafs/desktop.py:1581
+msgid "Discard the interrupted changes"
+msgstr ""
+
+#: src/amigafs/core/properties.py:22
+msgid "DiskMasher archive"
+msgstr ""
+
+#: src/amigafs/desktop.py:1715
+#, python-brace-format
+msgid "Do not remove or reuse {image} until AmigaFS reports that it is finished."
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:96
+msgid "Drive identity"
+msgstr ""
+
+#: src/amigafs/core/repair.py:92
+msgid "Dry-run repair plan (the image was not modified):"
+msgstr ""
+
+#: src/amigafs/desktop.py:1067
+#, python-brace-format
+msgid ""
+"EVERYTHING on {device} will be replaced by {image}. This cannot be undone.\n"
+"\n"
+"Type {name} to confirm:"
+msgstr ""
+
+#: src/amigafs/core/containers.py:332
+msgid "Encoding the HFE image…"
+msgstr ""
+
+#: src/amigafs/desktop.py:1284
+msgid "Enter sidebar, runtime, or an absolute directory path.\n"
+msgstr ""
+
+#: src/amigafs/core/transfer.py:265
+#, python-brace-format
+msgid "Export currently accepts files, not directories: {path}"
+msgstr ""
+
+#: src/amigafs/core/transfer.py:242
+#, python-brace-format
+msgid "Export destination directory does not exist: {path}"
+msgstr ""
+
+#: src/amigafs/core/transfer.py:248
+#, python-brace-format
+msgid "Export would overwrite an existing file: {path}"
+msgstr ""
+
+#: src/amigafs/core/properties.py:23
+msgid "Extended ADF"
+msgstr ""
+
+#: src/amigafs/core/validation.py:51
+msgid "FATAL"
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:113
+msgid "Filesystem"
+msgstr ""
+
+#: src/amigafs/core/validation.py:134
+msgid "Filesystem validation passed with no problems."
+msgstr ""
+
+#: src/amigafs/core/formats.py:199 src/amigafs/desktop.py:617
+#, python-brace-format
+msgid "Floppy drive {drive}"
+msgstr ""
+
+#: src/amigafs/core/create.py:204
+msgid "Floppy image created and verified"
+msgstr ""
+
+#: src/amigafs/greaseweazle.py:586
+msgid "Floppy read completely."
+msgstr ""
+
+#: src/amigafs/desktop.py:1336
+msgid "Flushing and validating the image…"
+msgstr ""
+
+#: src/amigafs/core/create.py:271
+#, python-brace-format
+msgid "Formatting partition {name}…"
+msgstr ""
+
+#: src/amigafs/core/create.py:183
+msgid "Formatting the empty volume…"
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:135
+msgid "Free"
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:100
+msgid "Geometry"
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:58
+msgid "GiB"
+msgstr ""
+
+#: src/amigafs/greaseweazle.py:508
+msgid "Greaseweazle completed the write but did not confirm verification. The physical floppy may be incomplete; do not rely on its contents."
+msgstr ""
+
+#: src/amigafs/greaseweazle.py:431
+#, python-brace-format
+msgid "Greaseweazle could not complete the operation: {detail}."
+msgstr ""
+
+#: src/amigafs/core/containers.py:213
+msgid "Greaseweazle did not finish in time."
+msgstr ""
+
+#: src/amigafs/greaseweazle.py:427
+msgid "Greaseweazle exceeded its time limit."
+msgstr ""
+
+#: src/amigafs/core/containers.py:222
+#, python-brace-format
+msgid "Greaseweazle failed: {detail}"
+msgstr ""
+
+#: src/amigafs/desktop.py:720
+msgid "Greaseweazle unavailable"
+msgstr ""
+
+#: src/amigafs/desktop.py:813
+#, python-brace-format
+msgid "Greaseweazle wrote and verified {image} in drive {drive}."
+msgstr ""
+
+#: src/amigafs/desktop.py:816
+#, python-brace-format
+msgid "Greaseweazle wrote {image} in drive {drive}. A track-level image cannot be verified by reading it back."
+msgstr ""
+
+#: src/amigafs/core/create.py:303
+msgid "Hard-disc image created and verified"
+msgstr ""
+
+#: src/amigafs/core/transfer.py:164
+#, python-brace-format
+msgid "Host file needs {size} bytes but the volume has {free} bytes free."
+msgstr ""
+
+#: src/amigafs/core/transfer.py:362
+#, python-brace-format
+msgid "INF length {recorded} does not match host file length {actual}."
+msgstr ""
+
+#: src/amigafs/core/transfer.py:205
+#, python-brace-format
+msgid "INF sidecar does not exist or is not a file: {path}"
+msgstr ""
+
+#: src/amigafs/core/transfer.py:220
+#, python-brace-format
+msgid "INF sidecar exceeds the {limit}-byte safety limit."
+msgstr ""
+
+#: src/amigafs/core/transfer.py:228
+#, python-brace-format
+msgid "INF sidecar {name}"
+msgstr ""
+
+#: src/amigafs/core/create.py:123
+#, python-brace-format
+msgid "Image creation would overwrite existing file: {name}"
+msgstr ""
+
+#: src/amigafs/core/containers.py:646
+msgid "Image decoded."
+msgstr ""
+
+#: src/amigafs/core/formats.py:217
+#, python-brace-format
+msgid "Image does not exist or cannot be inspected: {path}"
+msgstr ""
+
+#: src/amigafs/core/formats.py:233
+#, python-brace-format
+msgid "Image does not exist or is not a regular file: {path}"
+msgstr ""
+
+#: src/amigafs/core/transfer.py:280
+#, python-brace-format
+msgid "Image read ended at {offset} bytes; expected {size}."
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:70 src/amigafs_nautilus/logic.py:86
+msgid "Image type"
+msgstr ""
+
+#: src/amigafs/core/transfer.py:356
+#, python-brace-format
+msgid "Import destination already exists: {name}"
+msgstr ""
+
+#: src/amigafs/core/transfer.py:343
+#, python-brace-format
+msgid "Import destination does not exist: {path}"
+msgstr ""
+
+#: src/amigafs/core/transfer.py:347
+#, python-brace-format
+msgid "Import destination is not a directory: {path}"
+msgstr ""
+
+#: src/amigafs/core/transfer.py:331
+#, python-brace-format
+msgid "Import source does not exist or is not a file: {path}"
+msgstr ""
+
+#: src/amigafs/desktop.py:440
+msgid "Inspecting the selected image…"
+msgstr ""
+
+#: src/amigafs/desktop.py:629
+#, python-brace-format
+msgid "Inspecting {image}…"
+msgstr ""
+
+#: src/amigafs/desktop.py:1651
+msgid "Keep the current image and discard the checkpoint"
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:58
+msgid "KiB"
+msgstr ""
+
+#: src/amigafs/core/properties.py:25
+msgid "Kickstart ROM"
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:89
+msgid "Layout"
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:186
+msgid "Link"
+msgstr ""
+
+#: src/amigafs/core/repair.py:158
+msgid "Mark every block the directory tree reaches as in use and everything else as free, as the Amiga's own disk validator does. No file or directory is changed."
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:58
+msgid "MiB"
+msgstr ""
+
+#: src/amigafs/core/transfer.py:211
+#, python-brace-format
+msgid "More than one case-insensitive INF sidecar matches {name}."
+msgstr ""
+
+#: src/amigafs/desktop.py:513
+msgid "Mount complete."
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:85
+msgid "Mount location…"
+msgstr ""
+
+#: src/amigafs/desktop.py:584
+#, python-brace-format
+msgid "Mount process exited with status {status}."
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:411
+msgid "Mount state"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:232
+#, python-brace-format
+msgid "Mount {image} read-write with a recovery checkpoint"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:222
+#, python-brace-format
+msgid "Mount {image} without allowing changes"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:404
+msgid "Mounted"
+msgstr ""
+
+#: src/amigafs/fuse_adapter/runner.py:41
+#, python-brace-format
+msgid "Mountpoint does not exist or is not a directory: {path}"
+msgstr ""
+
+#: src/amigafs/fuse_adapter/runner.py:45
+#, python-brace-format
+msgid "Mountpoint must be empty: {path}"
+msgstr ""
+
+#: src/amigafs/core/transfer.py:351
+msgid "Name a partition to import into, for example DH0: or DH0:Tools."
+msgstr ""
+
+#: src/amigafs/core/media.py:219
+#, python-brace-format
+msgid "No Amiga filesystem was found on {name}."
+msgstr ""
+
+#: src/amigafs/core/devices.py:55
+msgid "No Rigid Disk Block or Amiga volume was found at the start of this disc."
+msgstr ""
+
+#: src/amigafs/greaseweazle.py:494
+msgid "No cylinder was selected for writing."
+msgstr ""
+
+#: src/amigafs/core/media.py:310
+msgid "No floppy drive was selected."
+msgstr ""
+
+#: src/amigafs/core/blockio.py:424
+msgid "No image transaction is in progress."
+msgstr ""
+
+#: src/amigafs/desktop.py:1038
+msgid "No image was created."
+msgstr ""
+
+#: src/amigafs/recovery.py:386
+msgid "No interrupted working copy is available for this image."
+msgstr ""
+
+#: src/amigafs/desktop.py:935
+msgid "No physical disc detected"
+msgstr ""
+
+#: src/amigafs/desktop.py:732
+msgid "No physical drive detected"
+msgstr ""
+
+#: src/amigafs/greaseweazle.py:238
+msgid "No physical drive with an indexed floppy was detected."
+msgstr ""
+
+#: src/amigafs/desktop.py:729
+msgid "No physical drive with an indexed floppy was detected. Insert the disk, check the drive cable and power, then try again."
+msgstr ""
+
+#: src/amigafs/desktop.py:1646 src/amigafs/recovery.py:420
+msgid "No recovery checkpoint is pending."
+msgstr ""
+
+#: src/amigafs/desktop.py:932
+msgid "No removable or USB disc was found. Attach the Amiga disc or card, make sure Linux has not mounted it, then try again."
+msgstr ""
+
+#: src/amigafs/core/repair.py:98
+msgid "No repair action is proposed for informational findings only."
+msgstr ""
+
+#: src/amigafs/core/repair.py:88
+msgid "No repair actions are needed; validation found no problems."
+msgstr ""
+
+#: src/amigafs/core/containers.py:160
+msgid "No replacement image was produced."
+msgstr ""
+
+#: src/amigafs/desktop.py:719
+msgid "No responsive Greaseweazle device is currently connected."
+msgstr ""
+
+#: src/amigafs/greaseweazle.py:462 src/amigafs/greaseweazle.py:551
+msgid "No responsive Greaseweazle device was detected; reconnect it and try again."
+msgstr ""
+
+#: src/amigafs/core/transfer.py:261
+#, python-brace-format
+msgid "No such file in the image: {path}"
+msgstr ""
+
+#: src/amigafs/core/image.py:340
+#, python-brace-format
+msgid "No volume on this medium could be opened: {reason}"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:404 src/amigafs_nautilus/logic.py:115
+msgid "Not mounted"
+msgstr ""
+
+#: src/amigafs/core/blockio.py:383
+msgid "One operation would change more data than AmigaFS can stage safely."
+msgstr ""
+
+#: src/amigafs/core/properties.py:39
+msgid "One volume, no partition table"
+msgstr ""
+
+#: src/amigafs/core/disc_transfer.py:133
+msgid "Only a plain Amiga hard-disc image can be written to a disc."
+msgstr ""
+
+#: src/amigafs/core/devices.py:52
+msgid "Only whole removable discs can be opened; partitions and virtual devices are refused."
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:70
+msgid "Open AmigaFS image and filesystem actions"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:135
+msgid "Open a floppy and write changed tracks back when it is unmounted"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:162
+msgid "Open an Amiga hard disc or memory card attached to this computer"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:171
+msgid "Open an attached Amiga disc with an undo journal"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:262
+msgid "Open in Amiga File Forge…"
+msgstr ""
+
+#: src/amigafs/desktop.py:987
+msgid "Open physical Amiga disc"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:161
+msgid "Open physical Amiga disc read-only…"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:170
+msgid "Open physical Amiga disc read-write…"
+msgstr ""
+
+#: src/amigafs/desktop.py:898
+msgid "Open physical floppy"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:125
+msgid "Open physical floppy read-only…"
+msgstr ""
+
+#: src/amigafs/desktop.py:905
+msgid "Open physical floppy read-write"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:134
+msgid "Open physical floppy read-write…"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:221
+msgid "Open read-only"
+msgstr ""
+
+#: src/amigafs/desktop.py:911 src/amigafs_nautilus/extension.py:231
+msgid "Open read-write"
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:79
+msgid "Open the image to see its volumes."
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:263
+#, python-brace-format
+msgid "Open {image} in Amiga File Forge"
+msgstr ""
+
+#: src/amigafs/desktop.py:628
+msgid "Opening AmigaFS image"
+msgstr ""
+
+#: src/amigafs/desktop.py:1032 src/amigafs/desktop.py:1090
+msgid "Opening the disc…"
+msgstr ""
+
+#: src/amigafs/desktop.py:504
+msgid "Opening the mounted image in Files…"
+msgstr ""
+
+#: src/amigafs/core/disc_transfer.py:68 src/amigafs/core/disc_transfer.py:148
+#, python-brace-format
+msgid "Opening {name}…"
+msgstr ""
+
+#: src/amigafs/desktop.py:797
+msgid "Overwrite and verify"
+msgstr ""
+
+#: src/amigafs/core/devices.py:48
+msgid "Part of this disc is mounted by Linux. Unmount it there first."
+msgstr ""
+
+#: src/amigafs/core/validation.py:245
+#, python-brace-format
+msgid "Partition {name} ({format}) was not mounted: {reason}"
+msgstr ""
+
+#: src/amigafs/core/devices.py:203
+msgid "Permission to open the disc was not granted."
+msgstr ""
+
+#: src/amigafs/core/properties.py:19
+msgid "Physical Amiga disc"
+msgstr ""
+
+#: src/amigafs/core/properties.py:20
+msgid "Physical Amiga floppy"
+msgstr ""
+
+#: src/amigafs/desktop.py:1099
+msgid "Physical disc complete"
+msgstr ""
+
+#: src/amigafs/desktop.py:1044
+msgid "Physical disc read"
+msgstr ""
+
+#: src/amigafs/desktop.py:1041
+msgid "Physical disc read failed"
+msgstr ""
+
+#: src/amigafs/desktop.py:1096
+msgid "Physical disc write failed"
+msgstr ""
+
+#: src/amigafs/greaseweazle.py:236
+msgid "Physical drives detected."
+msgstr ""
+
+#: src/amigafs/desktop.py:820
+msgid "Physical floppy complete"
+msgstr ""
+
+#: src/amigafs/desktop.py:882
+msgid "Physical floppy read"
+msgstr ""
+
+#: src/amigafs/desktop.py:879
+msgid "Physical floppy read failed"
+msgstr ""
+
+#: src/amigafs/desktop.py:810
+msgid "Physical floppy write failed"
+msgstr ""
+
+#: src/amigafs/core/repair.py:290
+msgid "Planning repair…"
+msgstr ""
+
+#: src/amigafs/core/repair.py:369
+#, python-brace-format
+msgid "Post-repair validation failed: {detail}."
+msgstr ""
+
+#: src/amigafs/core/image.py:1363
+#, python-brace-format
+msgid "Post-write validation found {count} problem; the recovery checkpoint was retained. {problem}"
+msgid_plural "Post-write validation found {count} problems; the recovery checkpoint was retained. {problem}"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/amigafs/greaseweazle.py:465
+msgid "Preparing a stable image snapshot…"
+msgstr ""
+
+#: src/amigafs/desktop.py:447
+msgid "Preparing the mount location…"
+msgstr ""
+
+#: src/amigafs/desktop.py:1526
+msgid "Preparing the repair…"
+msgstr ""
+
+#: src/amigafs/desktop.py:803
+#, python-brace-format
+msgid "Preparing {image}…"
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:184
+msgid "Protection bits"
+msgstr ""
+
+#: src/amigafs/core/create.py:151
+msgid "Publishing the validated image…"
+msgstr ""
+
+#: src/amigafs/desktop.py:1004
+msgid "Read physical Amiga disc"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:181
+msgid "Read physical disc to image…"
+msgstr ""
+
+#: src/amigafs/desktop.py:834
+msgid "Read physical floppy"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:145
+msgid "Read physical floppy to image…"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:126
+msgid "Read the floppy in a Greaseweazle drive and open it"
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:76
+msgid "Read-only format"
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:75
+msgid "Read-write mounting"
+msgstr ""
+
+#: src/amigafs/core/media.py:332 src/amigafs/core/media.py:356
+#: src/amigafs/desktop.py:444
+msgid "Read-write mounting is not supported for this image format."
+msgstr ""
+
+#: src/amigafs/desktop.py:1031
+msgid "Reading physical Amiga disc"
+msgstr ""
+
+#: src/amigafs/desktop.py:872
+msgid "Reading physical floppy"
+msgstr ""
+
+#: src/amigafs/core/disc_transfer.py:102
+#, python-brace-format
+msgid "Reading the disc… {done} of {total} MiB"
+msgstr ""
+
+#: src/amigafs/greaseweazle.py:558
+#, python-brace-format
+msgid "Reading the floppy as {format}…"
+msgstr ""
+
+#: src/amigafs/greaseweazle.py:569
+#, python-brace-format
+msgid "Reading track {track}"
+msgstr ""
+
+#: src/amigafs/core/repair.py:156
+msgid "Rebuild the block-allocation bitmap"
+msgstr ""
+
+#: src/amigafs/core/repair.py:167
+msgid "Rebuild the directory caches"
+msgstr ""
+
+#: src/amigafs/recovery.py:451
+msgid "Recovery checkpoint discarded."
+msgstr ""
+
+#: src/amigafs/recovery.py:431
+#, python-brace-format
+msgid "Recovery checkpoint from {created_at} is ready. Use --restore to restore it or --discard to accept the current image."
+msgstr ""
+
+#: src/amigafs/core/repair.py:347
+msgid "Recovery checkpoint ready"
+msgstr ""
+
+#: src/amigafs/recovery.py:439
+msgid "Recovery checkpoint restored."
+msgstr ""
+
+#: src/amigafs/desktop.py:1641
+msgid "Recovery needs a choice. Run 'amigafs recover IMAGE --restore' or '--discard'."
+msgstr ""
+
+#: src/amigafs/desktop.py:1692
+msgid "Recovery stopped before anything was restored. The image was not changed and the checkpoint is still available."
+msgstr ""
+
+#: src/amigafs/safe_paths.py:42 src/amigafs/safe_paths.py:48
+#, python-brace-format
+msgid "Refusing an unsafe private AmigaFS directory: {name}"
+msgstr ""
+
+#: src/amigafs/core/disc_transfer.py:67 src/amigafs/greaseweazle.py:621
+#: src/amigafs/recovery.py:398
+#, python-brace-format
+msgid "Refusing to overwrite an existing file: {path}"
+msgstr ""
+
+#: src/amigafs/preferences.py:147
+#, python-brace-format
+msgid "Refusing to remove a symbolic-link preferences file: {path}"
+msgstr ""
+
+#: src/amigafs/preferences.py:128
+#, python-brace-format
+msgid "Refusing to replace a symbolic-link preferences file: {path}"
+msgstr ""
+
+#: src/amigafs/core/repair.py:331
+msgid "Repair audit created"
+msgstr ""
+
+#: src/amigafs/core/repair.py:383
+msgid "Repair completed and verified"
+msgstr ""
+
+#: src/amigafs/core/repair.py:404
+#, python-brace-format
+msgid "Repair completed and verified, but its audit could not be marked complete. The verified audit was retained at {audit}: {error}"
+msgstr ""
+
+#: src/amigafs/core/repair.py:297
+#, python-brace-format
+msgid "Repair confirmation must exactly match the image filename: {name}"
+msgstr ""
+
+#: src/amigafs/core/repair.py:409
+#, python-brace-format
+msgid "Repair failed; the checkpoint was retained. Audit: {audit}: {error}"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:242
+msgid "Repair image…"
+msgstr ""
+
+#: src/amigafs/core/repair.py:302
+msgid "Repair plan validated"
+msgstr ""
+
+#: src/amigafs/core/repair.py:376
+msgid "Repair verified; finalising checkpoint…"
+msgstr ""
+
+#: src/amigafs/desktop.py:1525
+msgid "Repairing AmigaFS image"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:283
+#, python-brace-format
+msgid "Replace an attached disc with {image} and verify it"
+msgstr ""
+
+#: src/amigafs/desktop.py:482
+msgid "Requesting access to the disc…"
+msgstr ""
+
+#: src/amigafs/core/properties.py:41
+msgid "Resident module list"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:348
+msgid "Resolve interrupted read-write mount…"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:195
+#, python-brace-format
+msgid "Resolve interrupted session on {name}…"
+msgstr ""
+
+#: src/amigafs/core/repair.py:178
+msgid "Restore damaged filesystem structures"
+msgstr ""
+
+#: src/amigafs/desktop.py:1650
+msgid "Restore image to the pre-mount checkpoint"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:349
+msgid "Restore the pre-mount checkpoint or keep the current image"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:196
+msgid "Restore, keep or salvage the changes of an interrupted session"
+msgstr ""
+
+#: src/amigafs/desktop.py:1680
+msgid "Restoring AmigaFS image"
+msgstr ""
+
+#: src/amigafs/desktop.py:1681
+msgid "Restoring every block the interrupted session changed…"
+msgstr ""
+
+#: src/amigafs/greaseweazle.py:335
+msgid "Retrying track verification…"
+msgstr ""
+
+#: src/amigafs/core/repair.py:340
+msgid "Revalidating image before checkpoint creation…"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:243
+#, python-brace-format
+msgid "Review eligible low-risk repairs for {image}"
+msgstr ""
+
+#: src/amigafs/core/repair.py:169
+msgid "Rewrite each directory's cache from the file headers it lists. No file or directory is changed."
+msgstr ""
+
+#: src/amigafs/core/properties.py:40
+msgid "Rigid Disk Block partition table"
+msgstr ""
+
+#: src/amigafs/desktop.py:1282
+msgid "Run 'amigafs config-mount-location' to configure mount locations."
+msgstr ""
+
+#: src/amigafs/desktop.py:1171
+#, python-brace-format
+msgid "Run 'amigafs create-floppy {destination}' or 'amigafs create-hard-disc {destination}' to create an image without Zenity."
+msgstr ""
+
+#: src/amigafs/desktop.py:983
+msgid "Run 'amigafs mount /dev/DISC MOUNTPOINT' to mount a disc without Zenity."
+msgstr ""
+
+#: src/amigafs/desktop.py:894
+msgid "Run 'amigafs mount floppy:A MOUNTPOINT' to mount a floppy without Zenity."
+msgstr ""
+
+#: src/amigafs/desktop.py:1000
+msgid "Run 'amigafs read-disc /dev/DISC FILE.hdf' to image a disc without Zenity."
+msgstr ""
+
+#: src/amigafs/desktop.py:830
+msgid "Run 'amigafs read-floppy DRIVE FILE.adf' to capture a floppy without Zenity."
+msgstr ""
+
+#: src/amigafs/desktop.py:1499
+#, python-brace-format
+msgid "Run 'amigafs repair {image} --confirm {name}' to apply the eligible repair."
+msgstr ""
+
+#: src/amigafs/desktop.py:1056
+msgid "Run 'amigafs write-disc IMAGE /dev/DISC --confirm NAME' to write without Zenity."
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:150
+msgid "Safe for read-write mounting"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:147
+#, python-brace-format
+msgid "Save the floppy in a Greaseweazle drive as an ADF in {directory}"
+msgstr ""
+
+#: src/amigafs/desktop.py:1580
+msgid "Save the interrupted working copy as a new image…"
+msgstr ""
+
+#: src/amigafs/desktop.py:883
+#, python-brace-format
+msgid "Saved a complete {format} image as {name}."
+msgstr ""
+
+#: src/amigafs/desktop.py:1318
+#, python-brace-format
+msgid ""
+"Saved mount location:\n"
+"{root}\n"
+"\n"
+"Mode: {mode}{override}"
+msgstr ""
+
+#: src/amigafs/desktop.py:1045
+#, python-brace-format
+msgid "Saved {size} as {name}."
+msgstr ""
+
+#: src/amigafs/desktop.py:1005
+msgid "Select the Amiga disc to copy to a new image."
+msgstr ""
+
+#: src/amigafs/desktop.py:988
+msgid "Select the Amiga disc to open. The computer's own discs are never listed."
+msgstr ""
+
+#: src/amigafs/desktop.py:786
+msgid "Select the Greaseweazle drive containing the destination floppy."
+msgstr ""
+
+#: src/amigafs/desktop.py:899
+msgid "Select the Greaseweazle drive containing the floppy to open."
+msgstr ""
+
+#: src/amigafs/desktop.py:835
+msgid "Select the Greaseweazle drive containing the floppy to read."
+msgstr ""
+
+#: src/amigafs/desktop.py:1061
+#, python-brace-format
+msgid "Select the disc to overwrite with {image}."
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:132
+msgid "Size"
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:180
+msgid "Source filesystem"
+msgstr ""
+
+#: src/amigafs/core/transfer.py:199
+msgid "Specify either --sidecar or --ignore-sidecar, not both."
+msgstr ""
+
+#: src/amigafs/desktop.py:873 src/amigafs/greaseweazle.py:488
+msgid "Starting Greaseweazle…"
+msgstr ""
+
+#: src/amigafs/desktop.py:531
+msgid "Starting the AmigaFS mount service…"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:413 src/amigafs_nautilus/logic.py:115
+msgid "Status"
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:76
+msgid "Supported"
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:146
+msgid "Supported read-only"
+msgstr ""
+
+#: src/amigafs/core/containers.py:607
+msgid "Taking a stable copy of the image…"
+msgstr ""
+
+#: src/amigafs/core/image.py:1140
+msgid "That is not a valid Amiga volume name"
+msgstr ""
+
+#: src/amigafs/core/image.py:368
+msgid "That volume is not mounted."
+msgstr ""
+
+#: src/amigafs/core/image.py:484
+#, python-brace-format
+msgid "The Amiga filesystem tree contains a cycle at {path}."
+msgstr ""
+
+#: src/amigafs/core/image.py:478
+#, python-brace-format
+msgid "The Amiga filesystem tree exceeds {maximum} levels."
+msgstr ""
+
+#: src/amigafs/core/image.py:512
+#, python-brace-format
+msgid "The Amiga image contains more than {maximum} entries."
+msgstr ""
+
+#: src/amigafs/core/image.py:323
+#, python-brace-format
+msgid "The Amiga image could not be opened safely: {error}"
+msgstr ""
+
+#: src/amigafs/preferences.py:85
+msgid "The AmigaFS preferences file has an unsupported format."
+msgstr ""
+
+#: src/amigafs/preferences.py:75
+#, python-brace-format
+msgid "The AmigaFS preferences file is unsafe: {path}"
+msgstr ""
+
+#: src/amigafs/desktop.py:588
+msgid "The AmigaFS user service exited before mounting."
+msgstr ""
+
+#: src/amigafs/core/containers.py:392
+#, python-brace-format
+msgid "The DiskMasher archive could not be unpacked: {error}"
+msgstr ""
+
+#: src/amigafs/core/containers.py:399
+msgid "The DiskMasher archive does not contain a whole disk."
+msgstr ""
+
+#: src/amigafs/core/containers.py:396
+#, python-brace-format
+msgid "The DiskMasher archive is damaged: {error}"
+msgstr ""
+
+#: src/amigafs/core/transfer.py:119
+#, python-brace-format
+msgid "The INF comment is longer than {maximum} characters."
+msgstr ""
+
+#: src/amigafs/core/transfer.py:115
+msgid "The INF length does not fit in 32 bits."
+msgstr ""
+
+#: src/amigafs/core/transfer.py:101
+msgid "The INF sidecar does not record Amiga protection bits. It may describe a file from another system."
+msgstr ""
+
+#: src/amigafs/core/media.py:176
+#, python-brace-format
+msgid "The Rigid Disk Block cannot be read: {error}"
+msgstr ""
+
+#: src/amigafs/core/create.py:239
+msgid "The capacity is too small for that many partitions."
+msgstr ""
+
+#: src/amigafs/core/create.py:53
+msgid "The capacity must be a size such as 40MB or 1GB, not {text!r}."
+msgstr ""
+
+#: src/amigafs/core/create.py:229
+msgid "The capacity must be between 2 MiB and 64 GiB."
+msgstr ""
+
+#: src/amigafs/core/repair.py:308
+msgid "The complete repair plan is not eligible for automatic application; no checkpoint or image change was made."
+msgstr ""
+
+#: src/amigafs/core/containers.py:376 src/amigafs/greaseweazle.py:391
+#, python-brace-format
+msgid "The compressed image could not be unpacked: {error}"
+msgstr ""
+
+#: src/amigafs/core/containers.py:381
+msgid "The compressed image does not contain a whole number of 512-byte sectors."
+msgstr ""
+
+#: src/amigafs/core/containers.py:359
+#, python-brace-format
+msgid "The compressed image expands beyond the {limit} byte safety limit."
+msgstr ""
+
+#: src/amigafs/greaseweazle.py:387
+msgid "The compressed image is too large for a floppy."
+msgstr ""
+
+#: src/amigafs/preferences.py:97
+msgid "The configured AmigaFS mount location is invalid."
+msgstr ""
+
+#: src/amigafs/core/devices.py:247
+msgid "The desktop launcher could not open the disc."
+msgstr ""
+
+#: src/amigafs/core/devices.py:241
+#, python-brace-format
+msgid "The desktop launcher did not hand over the disc: {error}"
+msgstr ""
+
+#: src/amigafs/core/disc_transfer.py:64 src/amigafs/greaseweazle.py:618
+#, python-brace-format
+msgid "The destination directory does not exist: {path}"
+msgstr ""
+
+#: src/amigafs/core/disc_transfer.py:76
+#, python-brace-format
+msgid "The destination has less than the {size} bytes this disc needs."
+msgstr ""
+
+#: src/amigafs/core/blockio.py:278
+#, python-brace-format
+msgid "The device changed while AmigaFS was opening it: {path}"
+msgstr ""
+
+#: src/amigafs/core/devices.py:56
+msgid "The device changed while it was being opened."
+msgstr ""
+
+#: src/amigafs/core/devices.py:193
+msgid "The device helper did not answer."
+msgstr ""
+
+#: src/amigafs/core/devices.py:219
+msgid "The device helper did not pass back an open disc."
+msgstr ""
+
+#: src/amigafs/core/devices.py:206
+#, python-brace-format
+msgid "The device helper failed: {detail}"
+msgstr ""
+
+#: src/amigafs/core/devices.py:130
+msgid "The device helper returned a different disc."
+msgstr ""
+
+#: src/amigafs/core/devices.py:135
+msgid "The device helper returned a read-only descriptor."
+msgstr ""
+
+#: src/amigafs/core/devices.py:120
+msgid "The device helper returned an unreadable reply."
+msgstr ""
+
+#: src/amigafs/core/devices.py:137
+msgid "The device helper returned more access than was requested."
+msgstr ""
+
+#: src/amigafs/core/devices.py:127
+msgid "The device helper returned something that is not a disc."
+msgstr ""
+
+#: src/amigafs/core/image.py:1297
+msgid "The directory tree is too deep to validate."
+msgstr ""
+
+#: src/amigafs/core/image.py:505
+#, python-brace-format
+msgid "The directory {path} cannot be read: {error}"
+msgstr ""
+
+#: src/amigafs/core/image.py:499
+#, python-brace-format
+msgid "The directory {path} is too deeply nested to read."
+msgstr ""
+
+#: src/amigafs/core/disc_transfer.py:201
+msgid "The disc does not read back as it was written. Do not rely on its contents."
+msgstr ""
+
+#: src/amigafs/core/disc_transfer.py:146
+msgid "The disc has an interrupted writable session; resolve its recovery first."
+msgstr ""
+
+#: src/amigafs/core/devices.py:54
+msgid "The disc or its adapter is write-protected."
+msgstr ""
+
+#: src/amigafs/core/disc_transfer.py:87
+#, python-brace-format
+msgid "The disc stopped answering at byte {offset}."
+msgstr ""
+
+#: src/amigafs/desktop.py:975
+msgid "The disc-selection dialog returned an invalid response."
+msgstr ""
+
+#: src/amigafs/desktop.py:754
+msgid "The drive-selection dialog returned an invalid response."
+msgstr ""
+
+#: src/amigafs/core/containers.py:441
+msgid "The extended ADF declares an impossible track count."
+msgstr ""
+
+#: src/amigafs/core/containers.py:452
+msgid "The extended ADF does not hold one standard AmigaDOS track size."
+msgstr ""
+
+#: src/amigafs/core/containers.py:415
+msgid "The extended ADF header is truncated."
+msgstr ""
+
+#: src/amigafs/core/containers.py:446
+msgid "The extended ADF holds raw or copy-protected tracks and cannot be mounted without losing track-level data."
+msgstr ""
+
+#: src/amigafs/core/containers.py:459
+msgid "The extended ADF track data is truncated."
+msgstr ""
+
+#: src/amigafs/core/containers.py:423 src/amigafs/core/containers.py:434
+msgid "The extended ADF track table is truncated."
+msgstr ""
+
+#: src/amigafs/mounts.py:53
+#, python-brace-format
+msgid "The fallback runtime directory is not private: {path}"
+msgstr ""
+
+#: src/amigafs/core/formats.py:254
+#, python-brace-format
+msgid "The file is not a supported AmigaFS image: {path}"
+msgstr ""
+
+#: src/amigafs/core/containers.py:439
+msgid "The file is not an extended ADF."
+msgstr ""
+
+#: src/amigafs/preferences.py:64
+msgid "The filesystem root cannot be used as the AmigaFS mount location."
+msgstr ""
+
+#: src/amigafs/greaseweazle.py:596
+#, python-brace-format
+msgid "The floppy could not be read as a complete AmigaDOS disk: {detail}. A damaged or copy-protected disk can still be captured as a track-level image with 'gw read'."
+msgstr ""
+
+#: src/amigafs/greaseweazle.py:370
+msgid "The floppy image changed while it was being prepared; no physical write started."
+msgstr ""
+
+#: src/amigafs/desktop.py:907
+#, python-brace-format
+msgid ""
+"The floppy in drive {drive} is read into a working copy. When you unmount it, the changed tracks are written back to the floppy and verified.\n"
+"\n"
+"Leave the floppy in the drive until AmigaFS reports that it was unmounted."
+msgstr ""
+
+#: src/amigafs/core/media.py:210
+msgid "The hard disc has no partition with a filesystem AmigaFS can read."
+msgstr ""
+
+#: src/amigafs/core/transfer.py:190
+msgid "The host file changed while it was being read; import was cancelled."
+msgstr ""
+
+#: src/amigafs/core/transfer.py:172
+msgid "The host file grew beyond the volume's available space while reading."
+msgstr ""
+
+#: src/amigafs/desktop.py:670
+msgid "The image URI is malformed."
+msgstr ""
+
+#: src/amigafs/desktop.py:678
+msgid "The image URI must contain one unambiguous local path."
+msgstr ""
+
+#: src/amigafs/core/blockio.py:335
+#, python-brace-format
+msgid "The image can no longer be identified: {error}"
+msgstr ""
+
+#: src/amigafs/core/blockio.py:338
+msgid "The image changed outside AmigaFS; further writes are blocked."
+msgstr ""
+
+#: src/amigafs/core/media.py:329
+msgid "The image changed while AmigaFS was decoding it."
+msgstr ""
+
+#: src/amigafs/core/blockio.py:286
+#, python-brace-format
+msgid "The image changed while AmigaFS was opening it: {path}"
+msgstr ""
+
+#: src/amigafs/core/containers.py:616
+msgid "The image changed while AmigaFS was preparing it."
+msgstr ""
+
+#: src/amigafs/core/disc_transfer.py:186
+msgid "The image changed while it was being written; the disc is not reliable."
+msgstr ""
+
+#: src/amigafs/core/validation.py:303
+#, python-brace-format
+msgid "The image could not be opened for validation: {error}"
+msgstr ""
+
+#: src/amigafs/core/containers.py:158
+msgid "The image destination is no longer a regular file."
+msgstr ""
+
+#: src/amigafs/core/create.py:110
+#, python-brace-format
+msgid "The image destination is not a directory: {path}"
+msgstr ""
+
+#: src/amigafs/desktop.py:1388
+msgid "The image detached but its changes were not finalised safely; resolve its recovery checkpoint before mounting it read-write again."
+msgstr ""
+
+#: src/amigafs/desktop.py:1381
+msgid "The image detached but its writable daemon has not confirmed a safe flush. Do not reuse the image or remove the disc until the daemon has exited."
+msgstr ""
+
+#: src/amigafs/core/disc_transfer.py:166
+msgid "The image ended before its recorded length."
+msgstr ""
+
+#: src/amigafs/core/containers.py:603
+#, python-brace-format
+msgid "The image exceeds the {limit} byte safety limit for its format."
+msgstr ""
+
+#: src/amigafs/core/blockio.py:272 src/amigafs/recovery.py:349
+#: src/amigafs/recovery.py:447
+msgid "The image is mounted or open in another AmigaFS process."
+msgstr ""
+
+#: src/amigafs/core/blockio.py:221
+msgid "The image is on read-only storage or is not writable by this user. Open it read-only, or copy it to writable local storage."
+msgstr ""
+
+#: src/amigafs/core/disc_transfer.py:158
+#, python-brace-format
+msgid "The image is {size} bytes but the disc holds only {capacity}."
+msgstr ""
+
+#: src/amigafs/greaseweazle.py:415
+#, python-brace-format
+msgid "The image is {size} bytes, which is neither an 880 KiB nor a 1760 KiB Amiga floppy."
+msgstr ""
+
+#: src/amigafs/core/create.py:74 src/amigafs/desktop.py:866
+#: src/amigafs/desktop.py:1028
+msgid "The image name must be a filename, not a path."
+msgstr ""
+
+#: src/amigafs/core/create.py:80
+msgid "The image name must contain 1–64 ASCII letters, digits, dots, dashes or underscores."
+msgstr ""
+
+#: src/amigafs/desktop.py:655
+msgid "The image path contains an invalid path character (NUL)."
+msgstr ""
+
+#: src/amigafs/desktop.py:659
+msgid "The image path names an unknown user account."
+msgstr ""
+
+#: src/amigafs/desktop.py:863 src/amigafs/desktop.py:1224
+msgid "The image settings dialog returned an invalid response."
+msgstr ""
+
+#: src/amigafs/desktop.py:1453
+msgid "The image was not modified."
+msgstr ""
+
+#: src/amigafs/desktop.py:472
+msgid "The image's mount location is occupied by a different file identity. Unmount that location before mounting the replacement image."
+msgstr ""
+
+#: src/amigafs/recovery.py:389
+msgid "The interrupted working copy no longer exists."
+msgstr ""
+
+#: src/amigafs/recovery.py:436
+msgid "The interrupted working copy was removed. The source image is unchanged."
+msgstr ""
+
+#: src/amigafs/recovery.py:369
+msgid "The medium does not match the recovery checkpoint. A different disc or image may be in its place; nothing was restored."
+msgstr ""
+
+#: src/amigafs/core/media.py:214
+msgid "The medium is empty."
+msgstr ""
+
+#: src/amigafs/recovery.py:360
+#, python-brace-format
+msgid "The medium is {actual} bytes but the checkpoint was made for {expected} bytes. It is not the image this checkpoint belongs to."
+msgstr ""
+
+#: src/amigafs/preferences.py:58
+msgid "The mount location must be 'sidebar', 'runtime', or an absolute path."
+msgstr ""
+
+#: src/amigafs/file_forge.py:83
+#, python-brace-format
+msgid "The native Amiga File Forge application is not installed. Install its '{executable}' launcher, or set {variable} to another installed argv command."
+msgstr ""
+
+#: src/amigafs/desktop.py:1231
+msgid "The number of partitions must be a whole number."
+msgstr ""
+
+#: src/amigafs/operations.py:62
+msgid "The operation exceeded its safe time limit."
+msgstr ""
+
+#: src/amigafs/operations.py:59
+msgid "The operation stopped after reaching its safe directory-depth limit."
+msgstr ""
+
+#: src/amigafs/operations.py:55
+msgid "The operation stopped after reaching its safe item limit."
+msgstr ""
+
+#: src/amigafs/operations.py:69
+msgid "The operation was cancelled safely."
+msgstr ""
+
+#: src/amigafs/core/media.py:188
+msgid "The partition extends beyond the end of the medium."
+msgstr ""
+
+#: src/amigafs/core/media.py:186
+msgid "The partition lies beyond the end of the medium."
+msgstr ""
+
+#: src/amigafs/core/image.py:778
+msgid "The partition list of a hard disc cannot be changed here."
+msgstr ""
+
+#: src/amigafs/recovery.py:354
+msgid "The recovery checkpoint was made for a different kind of medium."
+msgstr ""
+
+#: src/amigafs/core/blockio.py:168
+msgid "The recovery journal describes data beyond the end of the image."
+msgstr ""
+
+#: src/amigafs/core/blockio.py:139
+msgid "The recovery journal has an unrecognised header."
+msgstr ""
+
+#: src/amigafs/recovery.py:337
+msgid "The recovery journal is missing and cannot be restored."
+msgstr ""
+
+#: src/amigafs/recovery.py:133
+#, python-brace-format
+msgid "The recovery manifest is unreadable: {path}: {error}"
+msgstr ""
+
+#: src/amigafs/core/containers.py:176
+msgid "The replacement image could not retain the source file attributes."
+msgstr ""
+
+#: src/amigafs/core/containers.py:168
+msgid "The replacement image could not retain the source file ownership."
+msgstr ""
+
+#: src/amigafs/desktop.py:465
+msgid "The selected AmigaFS mount root changed unexpectedly."
+msgstr ""
+
+#: src/amigafs/greaseweazle.py:246
+msgid "The selected Greaseweazle drive is invalid."
+msgstr ""
+
+#: src/amigafs/greaseweazle.py:360
+msgid "The selected floppy image is not a regular file."
+msgstr ""
+
+#: src/amigafs/core/devices.py:50
+msgid "The selected path is not a physical disc."
+msgstr ""
+
+#: src/amigafs/mounts.py:56
+msgid "The session runtime directory is unavailable."
+msgstr ""
+
+#: src/amigafs/desktop.py:1285
+msgid "The setting applies to future mounts; existing mounts are unchanged."
+msgstr ""
+
+#: src/amigafs/core/containers.py:560
+#, python-brace-format
+msgid "The track-level image cannot be mounted without losing track-level data: {detail}. It can still be written directly to a physical floppy."
+msgstr ""
+
+#: src/amigafs/safe_paths.py:31
+msgid "The trusted AmigaFS directory root is unsafe."
+msgstr ""
+
+#: src/amigafs/core/repair.py:180
+msgid "The volume cannot be parsed deeply enough for safe automatic reconstruction; use a known-good copy, or repair it on an Amiga or in an emulator."
+msgstr ""
+
+#: src/amigafs/core/image.py:871
+#, python-brace-format
+msgid "The volume has {free} bytes available; {wanted} bytes were requested"
+msgstr ""
+
+#: src/amigafs/core/create.py:94
+msgid "The volume name must contain 1–30 Latin-1 characters and no colon or slash."
+msgstr ""
+
+#: src/amigafs/desktop.py:1625
+#, python-brace-format
+msgid "The working copy was saved as {name}."
+msgstr ""
+
+#: src/amigafs/core/image.py:1179
+msgid "The writable session has failed; unmount and recover the image."
+msgstr ""
+
+#: src/amigafs/core/media.py:264
+#, python-brace-format
+msgid "The {format} volume cannot be opened: {error}"
+msgstr ""
+
+#: src/amigafs/core/devices.py:47
+msgid "There is no disc or card in this drive."
+msgstr ""
+
+#: src/amigafs/core/devices.py:154
+msgid "This account cannot open the disc, and the AmigaFS device helper is not installed. Install the AmigaFS system package, or give the account access to the device."
+msgstr ""
+
+#: src/amigafs/core/devices.py:284
+msgid "This account does not have access to the disc."
+msgstr ""
+
+#: src/amigafs/core/repair.py:120
+msgid "This complete plan can be applied with 'amigafs repair IMAGE --confirm IMAGE_FILENAME'."
+msgstr ""
+
+#: src/amigafs/core/devices.py:49
+msgid "This disc is in use by the system."
+msgstr ""
+
+#: src/amigafs/core/image.py:1292
+msgid "This filesystem has no structural validator."
+msgstr ""
+
+#: src/amigafs/core/containers.py:256 src/amigafs/core/containers.py:327
+msgid "This image format cannot be written back."
+msgstr ""
+
+#: src/amigafs/greaseweazle.py:399 src/amigafs/greaseweazle.py:458
+msgid "This image format cannot be written to a physical floppy."
+msgstr ""
+
+#: src/amigafs/core/repair.py:293 src/amigafs/desktop.py:1469
+#: src/amigafs/desktop.py:1550
+msgid "This image format has no supported repair operation."
+msgstr ""
+
+#: src/amigafs/desktop.py:1564
+msgid "This image has no complete low-risk automatic repair plan."
+msgstr ""
+
+#: src/amigafs/core/blockio.py:330
+msgid "This image has no writable identity signature."
+msgstr ""
+
+#: src/amigafs/core/devices.py:46
+msgid "This is one of the computer's own discs, which AmigaFS never opens."
+msgstr ""
+
+#: src/amigafs/desktop.py:1357
+msgid "This mount has no lifecycle identity record, so AmigaFS cannot prove its write mode or final flush state. Unmount it from a terminal before remounting it."
+msgstr ""
+
+#: src/amigafs/core/containers.py:200
+msgid "This operation requires the Greaseweazle host tools ('gw')."
+msgstr ""
+
+#: src/amigafs/core/media.py:109
+msgid "This partition's filesystem is not one AmigaFS can read."
+msgstr ""
+
+#: src/amigafs/core/repair.py:125
+msgid "This plan cannot be applied automatically; no changes are permitted."
+msgstr ""
+
+#: src/amigafs/core/repair.py:259
+msgid "This repair applies only to OFS and FFS volumes."
+msgstr ""
+
+#: src/amigafs/core/media.py:247
+msgid "This volume cannot be mounted."
+msgstr ""
+
+#: src/amigafs/core/image.py:780
+msgid "This volume's filesystem cannot be written."
+msgstr ""
+
+#: src/amigafs/desktop.py:603
+#, python-brace-format
+msgid "Timed out mounting {image}."
+msgstr ""
+
+#: src/amigafs/core/properties.py:24
+msgid "Track-level floppy image"
+msgstr ""
+
+#: src/amigafs/core/image.py:520
+#, python-brace-format
+msgid "Two entries in {path} map to the same Linux filename."
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:413
+#, python-brace-format
+msgid "Unavailable: {error}"
+msgstr ""
+
+#: src/amigafs/core/containers.py:644
+#, python-brace-format
+msgid "Unknown image container: {kind}"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:252
+msgid "Unmount"
+msgstr ""
+
+#: src/amigafs/core/disc_transfer.py:143
+msgid "Unmount the image before writing it to a disc."
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:253
+#, python-brace-format
+msgid "Unmount {mountpoint}"
+msgstr ""
+
+#: src/amigafs/desktop.py:1338
+msgid "Unmounting AmigaFS image"
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:148
+msgid "Unsafe for read-write mounting"
+msgstr ""
+
+#: src/amigafs/desktop.py:674
+#, python-brace-format
+msgid "Unsupported image URI scheme: {scheme}"
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:134
+msgid "Used"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:211
+msgid "Validate image"
+msgstr ""
+
+#: src/amigafs/desktop.py:1448
+msgid "Validating AmigaFS image"
+msgstr ""
+
+#: src/amigafs/core/create.py:139
+msgid "Validating the new image…"
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:162
+msgid "Validation"
+msgstr ""
+
+#: src/amigafs/core/repair.py:93
+#, python-brace-format
+msgid "Validation findings: {findings}; planned actions: {actions}."
+msgstr ""
+
+#: src/amigafs/core/repair.py:304
+msgid "Validation found no problems, so there is nothing to repair."
+msgstr ""
+
+#: src/amigafs/core/validation.py:138
+#, python-brace-format
+msgid "Validation found {fatal} fatal, {warning} warning, and {advice} advice {finding_label}:"
+msgstr ""
+
+#: src/amigafs/core/repair.py:364
+msgid "Verifying the complete repaired image…"
+msgstr ""
+
+#: src/amigafs/core/disc_transfer.py:198
+msgid "Verifying the disc…"
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:117 src/amigafs_nautilus/logic.py:183
+msgid "Volume name"
+msgstr ""
+
+#: src/amigafs/core/validation.py:52
+msgid "WARNING"
+msgstr ""
+
+#: src/amigafs/desktop.py:594
+#, python-brace-format
+msgid "Waiting for {image} to mount…"
+msgstr ""
+
+#: src/amigafs/core/validation.py:325
+#, python-brace-format
+msgid "Writable mount refused: validation found {count} fatal problem. {code}: {message}"
+msgid_plural "Writable mount refused: validation found {count} fatal problems. {code}: {message}"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/amigafs/core/image.py:1326
+#, python-brace-format
+msgid "Writable mount refused: validation of {volume} found {count} problem. {problem}"
+msgid_plural "Writable mount refused: validation of {volume} found {count} problems. {problem}"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/amigafs/core/blockio.py:293
+#, python-brace-format
+msgid "Writable mounting refuses an image with hard links: {path}. Copy it to a uniquely owned file first."
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:273
+#, python-brace-format
+msgid "Write and verify {image} using Greaseweazle"
+msgstr ""
+
+#: src/amigafs/desktop.py:1060
+msgid "Write image to physical disc"
+msgstr ""
+
+#: src/amigafs/desktop.py:785
+msgid "Write physical floppy"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:282
+msgid "Write to physical disc…"
+msgstr ""
+
+#: src/amigafs_nautilus/extension.py:272
+msgid "Write to physical floppy…"
+msgstr ""
+
+#: src/amigafs/greaseweazle.py:501
+#, python-brace-format
+msgid "Writing and verifying track {track}"
+msgstr ""
+
+#: src/amigafs/desktop.py:1089
+msgid "Writing physical disc"
+msgstr ""
+
+#: src/amigafs/desktop.py:802
+msgid "Writing physical floppy"
+msgstr ""
+
+#: src/amigafs/core/create.py:250
+msgid "Writing the Rigid Disk Block…"
+msgstr ""
+
+#: src/amigafs/desktop.py:1332
+msgid "Writing the changed tracks back to the floppy and verifying them…"
+msgstr ""
+
+#: src/amigafs/core/disc_transfer.py:178
+#, python-brace-format
+msgid "Writing the disc… {done} of {total} MiB"
+msgstr ""
+
+#: src/amigafs/desktop.py:1334
+msgid "Writing the updated image back…"
+msgstr ""
+
+#: src/amigafs/desktop.py:782
+msgid "Zenity is required to confirm a physical floppy write safely."
+msgstr ""
+
+#: src/amigafs/core/image.py:1050
+msgid "a directory cannot be moved inside itself"
+msgstr ""
+
+#: src/amigafs/core/image.py:892
+msgid "a link cannot be written through"
+msgstr ""
+
+#: src/amigafs/core/image.py:705
+msgid "a volume root has no file metadata"
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:58 src/amigafs_nautilus/logic.py:62
+msgid "bytes"
+msgstr ""
+
+#: src/amigafs/core/repair.py:100
+msgid "candidate"
+msgstr ""
+
+#: src/amigafs/core/image.py:788
+msgid "entries cannot be created through a directory link"
+msgstr ""
+
+#: src/amigafs/core/image.py:856
+msgid "file size cannot be negative"
+msgstr ""
+
+#: src/amigafs/core/image.py:1046
+msgid "files cannot be renamed between partitions"
+msgstr ""
+
+#: src/amigafs/core/validation.py:135
+msgid "finding"
+msgid_plural "findings"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/amigafs/desktop.py:1373 src/amigafs/desktop.py:1433
+msgid "fusermount3 failed"
+msgstr ""
+
+#: src/amigafs/core/repair.py:104
+msgid "high"
+msgstr ""
+
+#: src/amigafs/core/blockio.py:409 src/amigafs/core/image.py:776
+#: src/amigafs/core/image.py:1177
+msgid "image is read-only"
+msgstr ""
+
+#: src/amigafs/core/image.py:1048
+msgid "links cannot be moved safely by AmigaFS"
+msgstr ""
+
+#: src/amigafs/core/image.py:1005
+msgid "links cannot be removed safely by AmigaFS"
+msgstr ""
+
+#: src/amigafs/core/image.py:1061
+msgid "links cannot be replaced safely by AmigaFS"
+msgstr ""
+
+#: src/amigafs/core/repair.py:102
+msgid "low"
+msgstr ""
+
+#: src/amigafs/core/repair.py:100
+msgid "manual decision required"
+msgstr ""
+
+#: src/amigafs/core/repair.py:103
+msgid "medium"
+msgstr ""
+
+#: src/amigafs/core/image.py:708
+msgid "metadata of a link cannot be changed"
+msgstr ""
+
+#: src/amigafs/core/transfer.py:230
+msgid "neutral defaults"
+msgstr ""
+
+#: src/amigafs/core/containers.py:531
+msgid "no complete standard AmigaDOS layout matched"
+msgstr ""
+
+#: src/amigafs/greaseweazle.py:591
+#, python-brace-format
+msgid "not every sector could be read as {format}"
+msgstr ""
+
+#: src/amigafs/core/devices.py:161
+msgid "polkit ('pkexec') is required to open a physical disc."
+msgstr ""
+
+#: src/amigafs/core/image.py:723
+msgid "protection bits must fit in 32 bits"
+msgstr ""
+
+#: src/amigafs/desktop.py:508 src/amigafs/desktop.py:625
+msgid "read-only"
+msgstr ""
+
+#: src/amigafs/desktop.py:508 src/amigafs/desktop.py:625
+msgid "read-write"
+msgstr ""
+
+#: src/amigafs/desktop.py:553
+msgid "systemd-run failed"
+msgstr ""
+
+#: src/amigafs/core/image.py:691
+msgid "the hard disc root has no Amiga metadata"
+msgstr ""
+
+#: src/amigafs/core/containers.py:221 src/amigafs/greaseweazle.py:429
+#: src/amigafs/greaseweazle.py:598
+msgid "unknown error"
+msgstr ""
+
+#: src/amigafs/core/repair.py:268
+#, python-brace-format
+msgid "unsupported repair action: {action}"
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:157
+#, python-brace-format
+msgid "{count} advice"
+msgid_plural "{count} advice"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/amigafs_nautilus/logic.py:140
+#, python-brace-format
+msgid "{count} drawer"
+msgid_plural "{count} drawers"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/amigafs_nautilus/logic.py:137
+#, python-brace-format
+msgid "{count} file"
+msgid_plural "{count} files"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/amigafs_nautilus/logic.py:153
+#, python-brace-format
+msgid "{count} problem"
+msgid_plural "{count} problems"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/amigafs_nautilus/logic.py:101
+#, python-brace-format
+msgid "{cylinders} cylinders × {heads} heads × {sectors} sectors/track"
+msgstr ""
+
+#: src/amigafs/desktop.py:808
+#, python-brace-format
+msgid ""
+"{error}\n"
+"\n"
+"If writing started, the destination floppy may be incomplete."
+msgstr ""
+
+#: src/amigafs/core/repair.py:399
+#, python-brace-format
+msgid "{error} Audit: {audit}"
+msgstr ""
+
+#: src/amigafs/greaseweazle.py:689
+#, python-brace-format
+msgid "{error} The changes are kept in a working copy; save it with 'amigafs recover floppy:{drive} --salvage FILE.adf'."
+msgstr ""
+
+#: src/amigafs_nautilus/logic.py:136
+#, python-brace-format
+msgid "{files}, {drawers}"
+msgstr ""
+
+#: src/amigafs/core/media.py:112
+#, python-brace-format
+msgid "{format} volumes are not supported yet."
+msgstr ""
+
+#: src/amigafs/desktop.py:1489
+#, python-brace-format
+msgid "{image} has no reported filesystem problems."
+msgstr ""
+
+#: src/amigafs/desktop.py:511
+#, python-brace-format
+msgid "{image} is available in Files ({mode})."
+msgstr ""
+
+#: src/amigafs/desktop.py:644
+#, python-brace-format
+msgid "{image} is available in Files at {mountpoint} ({mode})."
+msgstr ""
+
+#: src/amigafs/desktop.py:1557
+#, python-brace-format
+msgid "{image} needs no repair."
+msgstr ""
+
+#: src/amigafs/desktop.py:1538
+#, python-brace-format
+msgid ""
+"{image} was repaired and fully verified.\n"
+"\n"
+"Audit report:\n"
+"{audit}"
+msgstr ""
+
+#: src/amigafs/desktop.py:1100
+#, python-brace-format
+msgid "{image} was written to the disc and verified."
+msgstr ""
+
+#: src/amigafs/desktop.py:1477
+#, python-brace-format
+msgid "{image}: [{severity}] {code}: {message}{suffix}"
+msgstr ""
+
+#: src/amigafs/core/repair.py:107
+#, python-brace-format
+msgid "{index}. {title} [{risk} risk; {mode}]"
+msgstr ""
+
+#: src/amigafs/desktop.py:1352
+#, python-brace-format
+msgid "{mountpoint} was already detached."
+msgstr ""
+
+#: src/amigafs/desktop.py:1406
+#, python-brace-format
+msgid "{mountpoint} was detached read-only."
+msgstr ""
+
+#: src/amigafs/desktop.py:1401
+#, python-brace-format
+msgid "{mountpoint} was flushed and validated safely."
+msgstr ""
+
+#: src/amigafs/desktop.py:1399
+#, python-brace-format
+msgid "{mountpoint} was written and validated. The disc can be removed."
+msgstr ""
+
+#: src/amigafs/core/image.py:1248
+#, python-brace-format
+msgid "{operation} could not be written to the medium: {error}. Unmount and restore the recovery checkpoint."
+msgstr ""
+
+#: src/amigafs/core/image.py:1233
+#, python-brace-format
+msgid "{operation} failed and the volume could not be reopened; unmount and restore the recovery checkpoint."
+msgstr ""
+
+#: src/amigafs/core/image.py:1221
+#, python-brace-format
+msgid "{operation} was abandoned because it would have left the volume inconsistent: {problem}"
+msgstr ""
+
+#: src/amigafs/core/blockio.py:252
+#, python-brace-format
+msgid "{path} is a block device; physical discs must be opened explicitly."
+msgstr ""
+
+#: src/amigafs/core/image.py:1007 src/amigafs/core/image.py:1064
+#, python-brace-format
+msgid "{path} is delete-protected"
+msgstr ""
+
+#: src/amigafs/core/blockio.py:258
+#, python-brace-format
+msgid "{path} is neither a regular file nor a block device."
+msgstr ""
+
+#: src/amigafs/core/image.py:894
+#, python-brace-format
+msgid "{path} is write-protected"
+msgstr ""
+
+#: src/amigafs/file_forge.py:27
+#, python-brace-format
+msgid "{variable} is not valid command syntax: {error}"
+msgstr ""
+
+#: src/amigafs/file_forge.py:33
+#, python-brace-format
+msgid "{variable} must name an executable."
+msgstr ""

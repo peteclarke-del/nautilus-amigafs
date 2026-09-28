@@ -1,0 +1,174 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  dependency-security-amd64:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install '.[dev]' pip-audit pip-licenses
+      - run: python -m pip_audit . --strict
+      - run: mkdir -p build/security
+      - run: pip-licenses --format=json --output-file=build/security/licenses.json
+      - if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: dependency-licences-amd64
+          path: build/security/licenses.json
+          if-no-files-found: error
+
+  python:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.11", "3.12", "3.13", "3.14"]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+      - run: sudo apt-get update
+      - run: sudo apt-get install --no-install-recommends -y libfuse3-dev pkg-config
+      - run: python -m pip install '.[dev,fuse]'
+      - run: make vendor-check
+      - run: make check
+      - run: python -m build
+
+  live-fuse-amd64:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: sudo apt-get update
+      - run: sudo apt-get install --no-install-recommends -y fuse3 libfuse3-dev pkg-config
+      - name: Expose the kernel FUSE device
+        run: |
+          sudo modprobe fuse
+          if [[ ! -e /dev/fuse ]]; then
+            sudo mknod -m 666 /dev/fuse c 10 229
+          fi
+          sudo chmod 666 /dev/fuse
+      - run: python -m pip install '.[dev,fuse]'
+      - name: Require usable live FUSE
+        run: >-
+          python -c 'from amigafs.fuse_adapter.availability import live_fuse_available;
+          raise SystemExit(0 if live_fuse_available() else
+          "CI provisioned /dev/fuse, but this user cannot create FUSE mounts")'
+      - run: make test-live
+
+  containers:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: docker/setup-qemu-action@v4
+      - uses: docker/setup-buildx-action@v4
+      - uses: docker/bake-action@v7
+        with:
+          load: false
+          push: false
+
+  package-lifecycle-amd64:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: sudo apt-get update
+      - run: sudo apt-get install --no-install-recommends -y libfuse3-dev pkg-config
+      - run: python -m pip install '.[dev]'
+      - name: Exercise clean install, forced upgrade and uninstall
+        run: python tools/package_smoke.py --build
+
+  debian-package-amd64:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install '.[release]'
+      - name: Build the reproducible Debian package
+        run: make deb
+      - name: Exercise system install and uninstall
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ./build/debian/nautilus-amigafs_*_amd64.deb
+          amigafs --help >/dev/null
+          /usr/bin/python3 -c 'import amigafs, amigafs_nautilus, amigafs._vendor.amiganut, pyfuse3, trio'
+          test -x /usr/libexec/amigafs/amigafs-device-helper
+          test "$(stat -c %U:%a /usr/libexec/amigafs/amigafs-device-helper)" = root:755
+          test -f /usr/share/polkit-1/actions/org.amigafs.device-helper.policy
+          test -f /usr/share/nautilus-python/extensions/nautilus_amigafs.py
+          sudo apt-get remove -y nautilus-amigafs
+          test ! -e /usr/bin/amigafs
+      - uses: actions/upload-artifact@v6
+        with:
+          name: debian-package-amd64
+          path: build/debian/
+          if-no-files-found: error
+
+  release-artifacts-amd64:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: sudo apt-get update
+      - run: sudo apt-get install --no-install-recommends -y libfuse3-dev pkg-config
+      - run: python -m pip install '.[release]'
+      - name: Build twice and verify release artefacts
+        run: python tools/release_artifacts.py --output build/release
+      - uses: actions/upload-artifact@v6
+        with:
+          name: release-artifacts-amd64
+          path: build/release/
+          if-no-files-found: error
+
+  benchmark-amd64:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install '.[dev]'
+      - run: make benchmark
+      - if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: performance-amd64
+          path: build/performance/amd64.json
+          if-no-files-found: error
+
+  fuzz-amd64:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install '.[fuzz]'
+      - run: make fuzz-smoke

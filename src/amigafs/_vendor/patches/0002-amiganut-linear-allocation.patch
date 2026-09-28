@@ -1,0 +1,32 @@
+--- a/amiganut/filesystem/amigados.py	2026-09-28 00:07:10.906873501 +0100
++++ b/amiganut/filesystem/amigados.py	2026-09-28 00:07:10.911873515 +0100
+@@ -394,14 +394,21 @@
+         bits = self._load_bitmap()
+         start = (near if near is not None else self.root_block) - self.reserved
+         start = max(0, min(start, len(bits) - 1)) if bits else 0
+-        for distance in range(len(bits)):
+-            for candidate in ((start + distance), (start - distance)):
+-                if 0 <= candidate < len(bits) and bits[candidate]:
+-                    bits[candidate] = 0
+-                    self._dirty_bitmap = True
+-                    self._dirty_pages.add(self._page_of(candidate))
+-                    return candidate + self.reserved
+-        raise DataError("The volume is full.")
++        # The nearest free block in either direction, the later one winning a
++        # tie. Searching the bitmap rather than stepping outwards one block at
++        # a time keeps a large file from taking quadratic time to allocate.
++        forward = bits.find(1, start)
++        backward = bits.rfind(1, 0, start)
++        if forward < 0 and backward < 0:
++            raise DataError("The volume is full.")
++        if backward < 0 or (forward >= 0 and forward - start <= start - backward):
++            candidate = forward
++        else:
++            candidate = backward
++        bits[candidate] = 0
++        self._dirty_bitmap = True
++        self._dirty_pages.add(self._page_of(candidate))
++        return candidate + self.reserved
+ 
+     def _release(self, block: int) -> None:
+         bits = self._load_bitmap()
