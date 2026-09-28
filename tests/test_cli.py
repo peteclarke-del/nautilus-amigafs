@@ -394,8 +394,15 @@ def test_detached_mount_error_redacts_unrelated_path(
             ["desktop-open", "file:///a.adf", "b.hdf"],
             "desktop_open",
             (["file:///a.adf", "b.hdf"],),
-            {},
+            {"handed_off": False},
         ),
+        (
+            ["desktop-open", "--handed-off", "a.adf"],
+            "desktop_open",
+            (["a.adf"],),
+            {"handed_off": True},
+        ),
+        (["desktop-claims", "a.adf"], "desktop_claims", ("a.adf",), {}),
         (["desktop-create", "/tmp"], "desktop_create", ("/tmp",), {"kind": "floppy"}),
         (
             ["desktop-create", "--kind", "hard-disc", "/tmp"],
