@@ -59,7 +59,18 @@ weight than the content magic, so an image is typed by what it holds. Nautilus
 AcornFS and Nautilus AmigaFS can be installed together; each offers its menu
 only for its own media. `application/x-hxc-hfe` is defined identically by both.
 
-Double-clicking a recognised image opens it read-only. Applications may open a
+Double-clicking a recognised image opens it read-only.
+
+Files chooses the application for a double-click from the name of a file when
+it cannot read the content cheaply, as on a network share, so an Amiga `.adf`
+may be given to AcornFS and an Acorn one to AmigaFS. Whichever is started
+looks at the content. If the image is not its own, it asks the other mounter
+with `desktop-claims`, and passes the image on when the answer is yes. An
+image that was passed on is never passed back. This needs Nautilus AmigaFS
+0.2.0 and a Nautilus AcornFS that knows `desktop-claims`; an older sibling is
+not asked twice and nothing is handed to it.
+
+Applications may open a
 local URI such as `amigafs:///path/to/workbench.adf`. Remote hosts, other
 schemes, queries and fragments are refused.
 

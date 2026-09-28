@@ -212,7 +212,9 @@ def _parser() -> argparse.ArgumentParser:
     for name in ("desktop-read-floppy", "desktop-read-disc"):
         subparsers.add_parser(name).add_argument("directory")
     desktop_open_parser = subparsers.add_parser("desktop-open")
+    desktop_open_parser.add_argument("--handed-off", action="store_true")
     desktop_open_parser.add_argument("images", nargs="+")
+    subparsers.add_parser("desktop-claims").add_argument("image")
     desktop_create_parser = subparsers.add_parser("desktop-create")
     desktop_create_parser.add_argument("directory")
     desktop_create_parser.add_argument("--kind", default="floppy", choices=("floppy", "hard-disc"))
@@ -630,7 +632,9 @@ def _desktop(args: argparse.Namespace) -> int:
     if command == "desktop-read-disc":
         return desktop.desktop_read_disc(args.directory)
     if command == "desktop-open":
-        return desktop.desktop_open(args.images)
+        return desktop.desktop_open(args.images, handed_off=args.handed_off)
+    if command == "desktop-claims":
+        return desktop.desktop_claims(args.image)
     if command == "desktop-create":
         return desktop.desktop_create(args.directory, kind=args.kind)
     if command == "desktop-configure-mount-location":
