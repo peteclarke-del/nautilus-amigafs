@@ -49,6 +49,7 @@ from amigafs.greaseweazle import (
     responsive_command,
     write_floppy,
 )
+from amigafs.handoff import hand_off, sibling_claiming
 from amigafs.i18n import _
 from amigafs.mounts import (
     is_mounted,
@@ -680,8 +681,29 @@ def local_image_reference(reference: str | Path) -> Path:
     return _expand_image_path(path)
 
 
-def desktop_open(image_references: list[str]) -> int:
-    """Open local desktop/MIME references as safe read-only mounts."""
+def _sibling_environment() -> dict[str, str]:
+    return {
+        name: value for name in _DESKTOP_ENVIRONMENT if (value := os.environ.get(name)) is not None
+    }
+
+
+def desktop_claims(image_path: str | Path) -> int:
+    """Answer a sibling mounter: 0 when the content is an Amiga source, otherwise 1."""
+
+    try:
+        resolve_image(Path(image_path).expanduser())
+    except (AmigaFSError, OSError):
+        return 1
+    return 0
+
+
+def desktop_open(image_references: list[str], *, handed_off: bool = False) -> int:
+    """Open local desktop/MIME references as safe read-only mounts.
+
+    Files picks this handler from the name of a file, so an image that is not
+    Amiga is passed to the sibling mounter that recognises it. An image that
+    was itself handed over is never passed on again.
+    """
 
     for reference in image_references:
         try:
@@ -689,6 +711,12 @@ def desktop_open(image_references: list[str]) -> int:
         except AmigaFSError as exc:
             _notify(_("AmigaFS open failed"), str(exc), error=True)
             raise
+        if not handed_off and desktop_claims(image_path) != 0:
+            environment = _sibling_environment()
+            sibling = sibling_claiming(image_path, environment)
+            if sibling is not None:
+                hand_off(sibling, image_path, environment)
+                continue
         desktop_mount(image_path, read_write=False)
     return 0
 
