@@ -22,7 +22,7 @@ jobs:
       - run: mkdir -p build/security
       - run: pip-licenses --format=json --output-file=build/security/licenses.json
       - if: always()
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: dependency-licences-amd64
           path: build/security/licenses.json
@@ -120,7 +120,7 @@ jobs:
           test -f /usr/share/nautilus-python/extensions/nautilus_amigafs.py
           sudo apt-get remove -y nautilus-amigafs
           test ! -e /usr/bin/amigafs
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         with:
           name: debian-package-amd64
           path: build/debian/
@@ -139,7 +139,7 @@ jobs:
       - run: python -m pip install '.[release]'
       - name: Build twice and verify release artefacts
         run: python tools/release_artifacts.py --output build/release
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         with:
           name: release-artifacts-amd64
           path: build/release/
@@ -156,7 +156,7 @@ jobs:
       - run: python -m pip install '.[dev]'
       - run: make benchmark
       - if: always()
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: performance-amd64
           path: build/performance/amd64.json
