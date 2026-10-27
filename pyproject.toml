@@ -33,7 +33,7 @@ release = [
     "build==1.5.0",
     "cyclonedx-bom==7.3.1",
     "setuptools==83.0.0",
-    "wheel==0.47.0",
+    "wheel==0.48.0",
 ]
 
 [project.scripts]
