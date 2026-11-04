@@ -1,6 +1,6 @@
 # Debian package
 
-AmigaFS produces one installable package for Ubuntu 24.04 LTS on amd64:
+AmigaFS produces one installable package for Ubuntu 24.04 and 26.04 LTS on amd64:
 
 ```text
 nautilus-amigafs_VERSION_amd64.deb
@@ -25,8 +25,9 @@ and desktop databases.
 
 ```text
 Depends:
-  python3 (>= 3.11~), python3 (<< 3.13), fuse3, python3-pyfuse3 (>= 3.3),
-  python3-trio (>= 0.24), python3-nautilus, gir1.2-nautilus-4.0,
+  python3 (>= 3.11~), fuse3, python3-pyfuse3 (>= 3.3),
+  python3-trio (>= 0.24), python3-nautilus,
+  gir1.2-nautilus-4.0 | gir1.2-nautilus-4.1,
   shared-mime-info, desktop-file-utils, libnotify-bin, zenity
 Recommends:
   pkexec, polkitd

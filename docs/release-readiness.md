@@ -5,7 +5,7 @@ into a completed item.
 
 ## Supported first-release boundary
 
-- Ubuntu 24.04 LTS on amd64 only.
+- Ubuntu 24.04 and 26.04 LTS on amd64.
 - GNOME/Nautilus 46 or later through the Nautilus 4 extension API.
 - FUSE 3 with unprivileged mounts owned by the current user.
 - Read-write for OFS and FFS in all eight variants, PFS3 and SFS, on floppy
@@ -34,6 +34,8 @@ into a completed item.
 - [ ] `make deb`, `make addon`, `make release` and `make package-smoke` have
   been run from a tagged commit. They need a Git history and have only been
   exercised through their unit tests.
+- [ ] The Ubuntu 26.04 amd64 Debian package passes a clean install, runtime
+  import and removal smoke test.
 - [ ] Coverage-guided fuzzing has been run. The harnesses are written; Atheris
   was not available on the development machine.
 - [ ] Images written by AmigaFS have been opened in an emulator and on a real

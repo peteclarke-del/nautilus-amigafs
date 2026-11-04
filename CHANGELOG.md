@@ -5,6 +5,17 @@ All notable changes to Nautilus AmigaFS are recorded here. The project follows
 
 ## Unreleased
 
+## 0.2.1 - 2026-11-04
+
+### Added
+
+- Ubuntu 26.04 package support, including Nautilus 50 and its 4.1 GI typelib.
+- Debian package install coverage on Ubuntu 26.04 alongside Ubuntu 24.04.
+
+### Fixed
+
+- Keep the package installable with newer system Python versions.
+
 ## 0.2.0 - 2026-09-28
 
 ### Added

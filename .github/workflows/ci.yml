@@ -126,6 +126,36 @@ jobs:
           path: build/debian/
           if-no-files-found: error
 
+  debian-package-ubuntu-26-04-amd64:
+    runs-on: ubuntu-26.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.14"
+          cache: pip
+      - run: sudo apt-get update
+      - run: sudo apt-get install --no-install-recommends -y libfuse3-dev pkg-config
+      - run: python -m pip install '.[release]'
+      - name: Build and install the Ubuntu 26.04 package
+        run: |
+          make deb
+          sudo apt-get update
+          sudo apt-get install -y ./build/debian/nautilus-amigafs_*_amd64.deb
+          amigafs --help >/dev/null
+          /usr/bin/python3 -c 'import amigafs, amigafs_nautilus, amigafs._vendor.amiganut, pyfuse3, trio'
+          test -x /usr/libexec/amigafs/amigafs-device-helper
+          test "$(stat -c %U:%a /usr/libexec/amigafs/amigafs-device-helper)" = root:755
+          test -f /usr/share/polkit-1/actions/org.amigafs.device-helper.policy
+          test -f /usr/share/nautilus-python/extensions/nautilus_amigafs.py
+          sudo apt-get remove -y nautilus-amigafs
+          test ! -e /usr/bin/amigafs
+      - uses: actions/upload-artifact@v6
+        with:
+          name: debian-package-ubuntu-26.04-amd64
+          path: build/debian/
+          if-no-files-found: error
+
   release-artifacts-amd64:
     runs-on: ubuntu-24.04
     steps:

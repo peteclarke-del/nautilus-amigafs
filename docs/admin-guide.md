@@ -2,8 +2,8 @@
 
 ## Supported deployment
 
-The support boundary is Ubuntu 24.04 LTS, GNOME/Nautilus 46 or later, FUSE 3
-and amd64. The filesystem daemon runs entirely as the logged-in user. Do not
+The supported desktop releases are Ubuntu 24.04 and 26.04 LTS on amd64, with
+GNOME/Nautilus 46 or later and FUSE 3. The filesystem daemon runs entirely as the logged-in user. Do not
 run Nautilus as root, grant `allow_other`, or change `/etc/fuse.conf` for an
 ordinary deployment.
 

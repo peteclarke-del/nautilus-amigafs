@@ -1,6 +1,6 @@
 # GNOME desktop and hardware acceptance
 
-Run this checklist in a clean Ubuntu 24.04 amd64 session with GNOME/Nautilus
+Run this checklist in clean Ubuntu 24.04 and 26.04 amd64 sessions with GNOME/Nautilus
 46 or later. Automated tests cover the menu model, the dialog command
 contract, the kernel FUSE operations, the device policy and the Greaseweazle
 command contract. They cannot establish visual layout, assistive-technology

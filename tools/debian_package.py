@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build a reproducible Ubuntu 24.04 amd64 package without install-time downloads."""
+"""Build a reproducible Ubuntu amd64 package without install-time downloads."""
 
 from __future__ import annotations
 
@@ -40,12 +40,11 @@ POLKIT_SOURCE = PROJECT_ROOT / "packaging/polkit/org.amigafs.device-helper.polic
 POLKIT_PATH = PurePosixPath("usr/share/polkit-1/actions/org.amigafs.device-helper.policy")
 RUNTIME_DEPENDENCIES = (
     "python3 (>= 3.11~)",
-    "python3 (<< 3.13)",
     "fuse3",
     "python3-pyfuse3 (>= 3.3)",
     "python3-trio (>= 0.24)",
     "python3-nautilus",
-    "gir1.2-nautilus-4.0",
+    "gir1.2-nautilus-4.0 | gir1.2-nautilus-4.1",
     "shared-mime-info",
     "desktop-file-utils",
     "libnotify-bin",

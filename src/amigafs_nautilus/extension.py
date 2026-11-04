@@ -27,7 +27,14 @@ from amigafs_nautilus.logic import (
     summary_property_rows,
 )
 
-gi.require_version("Nautilus", "4.0")
+for _nautilus_version in ("4.1", "4.0"):
+    try:
+        gi.require_version("Nautilus", _nautilus_version)
+        break
+    except ValueError:
+        continue
+else:
+    raise RuntimeError("The Nautilus 4.0 or 4.1 typelib is required.")
 from gi.repository import Gio, GObject, Nautilus  # noqa: E402
 
 _COMMAND = ["amigafs"]

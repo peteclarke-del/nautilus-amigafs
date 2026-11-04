@@ -37,13 +37,13 @@ def create_bundle(
     target = destination / f"nautilus-amigafs-addon-{version}.zip"
     instructions = f"""Nautilus AmigaFS add-on {version}
 
-Supported host: Ubuntu 24.04 LTS amd64 with GNOME Files 46 or later.
+Supported host: Ubuntu 24.04 or 26.04 amd64 with GNOME Files 46 or later.
 
 Install prerequisites:
     sudo apt update
     sudo apt install --no-install-recommends python3-venv python3-dev \\
         build-essential pkg-config fuse3 libfuse3-dev python3-nautilus \\
-        gir1.2-nautilus-4.0 shared-mime-info desktop-file-utils \\
+        shared-mime-info desktop-file-utils \\
         libnotify-bin zenity
 
 Installation downloads pinned Python dependencies into a private environment.
