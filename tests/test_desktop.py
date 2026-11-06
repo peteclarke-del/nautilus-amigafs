@@ -366,7 +366,10 @@ def test_desktop_uri_handler_accepts_only_local_image_paths() -> None:
     assert local_image_reference("relative/work.adf") == Path("relative/work.adf")
     with pytest.raises(AmigaFSError, match="only local"):
         local_image_reference("file://server/share/work.adf")
-    with pytest.raises(AmigaFSError, match="Unsupported"):
+    with (
+        patch("amigafs.desktop._gvfs_local_path", return_value=None),
+        pytest.raises(AmigaFSError, match="Unsupported"),
+    ):
         local_image_reference("https://example.test/work.adf")
     with pytest.raises(AmigaFSError, match="Unsupported"):
         local_image_reference("acornfs:///tmp/scsi0.dat")

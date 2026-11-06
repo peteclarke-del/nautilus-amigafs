@@ -660,6 +660,29 @@ def _expand_image_path(reference: str | Path) -> Path:
         raise AmigaFSError(_("The image path names an unknown user account.")) from exc
 
 
+def _gvfs_local_path(reference: str) -> str | None:
+    """Return the local path GIO gives a remote desktop URI, if it has one.
+
+    Files passes an image on a network share, such as ``smb://server/share/disk.hdf``,
+    to the launcher as that URI. GVfs also makes the share reachable by name under
+    ``/run/user/UID/gvfs``; GIO reports that path, and ``None`` when the location has
+    no local name, GIO is unavailable or the share is not mounted.
+    """
+
+    try:
+        import gi
+
+        gi.require_version("Gio", "2.0")
+        from gi.repository import Gio
+    except (ImportError, ValueError):
+        return None
+    try:
+        path = Gio.File.new_for_uri(reference).get_path()
+    except Exception:  # noqa: BLE001 - any GIO failure means there is no local path
+        return None
+    return path or None
+
+
 def local_image_reference(reference: str | Path) -> Path:
     """Convert a desktop path, file URI or AmigaFS URI to one local image."""
 
@@ -672,6 +695,8 @@ def local_image_reference(reference: str | Path) -> Path:
     if not parsed.scheme:
         return _expand_image_path(reference)
     if parsed.scheme not in {"file", "amigafs"}:
+        if (remote_path := _gvfs_local_path(reference)) is not None:
+            return _expand_image_path(remote_path)
         raise AmigaFSError(_("Unsupported image URI scheme: {scheme}").format(scheme=parsed.scheme))
     if parsed.netloc not in {"", "localhost"}:
         raise AmigaFSError(_("AmigaFS can open only local image URIs."))
