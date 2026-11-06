@@ -6,7 +6,7 @@ AmigaFS uses Python 3.11 or later and pyfuse3, a maintained binding for
 libfuse 3 with async request handling. Image code is independent of pyfuse3, so
 it is tested without mounting and without elevated privileges.
 
-The host baseline is Ubuntu 24.04 LTS, FUSE 3 and Nautilus 46 or later through
+The supported host baselines are Ubuntu 24.04 and 26.04 LTS, FUSE 3 and Nautilus 46 or later through
 the Nautilus 4 GObject-introspection API.
 
 ## Package boundaries

@@ -18,7 +18,7 @@ a branch or rewritten during a build.
 2. Run `make check`, `make benchmark`, `make test-live` and
    `make test-live-greaseweazle`.
 3. Install `.[release]` and run `make release`, `make package-smoke` and
-   `make deb`. Install the `.deb` into a clean Ubuntu 24.04 environment,
+   `make deb`. Install the `.deb` into clean Ubuntu 24.04 and 26.04 environments,
    exercise the command, the Files loader and the device helper, and remove
    it.
 4. Set the version, date the changelog section and review the whole diff.

@@ -108,8 +108,8 @@ built by `make deb` and `make addon`.
 
 ### Debian package
 
-The package targets Ubuntu 24.04 LTS on amd64, Python 3.11 or 3.12, FUSE 3 and
-GNOME Files 46 or later.
+The package targets Ubuntu 24.04 and 26.04 LTS on amd64, Python 3.11 or later,
+FUSE 3 and GNOME Files (Nautilus) 46 or later.
 
 ```shell
 sudo apt update

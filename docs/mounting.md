@@ -4,7 +4,7 @@
 
 Linux on amd64 with Python 3.11 or later and FUSE 3. For ordinary desktop use,
 install the Debian package as described in the
-[README](../README.md#installation). For development on Ubuntu 24.04:
+[README](../README.md#installation). For development on Ubuntu 24.04 or 26.04:
 
 ```shell
 sudo apt install python3-venv python3-dev build-essential fuse3 libfuse3-dev pkg-config

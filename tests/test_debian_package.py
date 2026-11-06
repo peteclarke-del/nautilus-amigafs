@@ -100,6 +100,8 @@ def test_staging_builds_one_system_package_with_desktop_assets(tmp_path: Path) -
     control = (root / "DEBIAN/control").read_text(encoding="utf-8")
     assert "Package: nautilus-amigafs" in control
     assert "python3-pyfuse3" in control
+    assert "python3 (<< 3.13)" not in control
+    assert "gir1.2-nautilus-4.0 | gir1.2-nautilus-4.1" in control
     assert "Recommends: pkexec, polkitd" in control
     assert f"X-Amiganut-Version: {inventory['amiganut']['version']}" in control
     assert "oaknut" not in control.casefold() and "acorn" not in control.casefold()

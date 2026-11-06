@@ -13,7 +13,7 @@ passed validation.
 
 ## Install
 
-The Debian package is the recommended installation on Ubuntu 24.04 amd64:
+The Debian package is the recommended installation on Ubuntu 24.04 or 26.04 amd64:
 
 ```shell
 sudo apt update
