@@ -302,6 +302,30 @@ def test_unknown_user_image_reference_is_rejected_safely() -> None:
         local_image_reference("~amigafs-user-that-does-not-exist/image.adf")
 
 
+def test_remote_image_uri_opens_through_its_gvfs_path(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path
+) -> None:
+    from amigafs import desktop
+
+    image = tmp_path / "disk.hdf"
+    image.write_bytes(b"")
+    uri = "smb://nas/share/disk.hdf"
+    monkeypatch.setattr(
+        desktop, "_gvfs_local_path", lambda reference: str(image) if reference == uri else None
+    )
+
+    assert desktop.local_image_reference(uri) == image
+
+
+def test_remote_image_uri_without_a_local_path_is_rejected(monkeypatch: pytest.MonkeyPatch) -> None:
+    from amigafs import desktop
+
+    monkeypatch.setattr(desktop, "_gvfs_local_path", lambda reference: None)
+
+    with pytest.raises(AmigaFSError, match="Unsupported image URI scheme: smb"):
+        desktop.local_image_reference("smb://nas/share/disk.hdf")
+
+
 def test_malformed_image_uri_is_rejected_safely() -> None:
     from amigafs.desktop import local_image_reference
 

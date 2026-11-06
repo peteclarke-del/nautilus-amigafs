@@ -5,6 +5,16 @@ All notable changes to Nautilus AmigaFS are recorded here. The project follows
 
 ## Unreleased
 
+## 0.2.2 - 2026-11-06
+
+### Fixed
+
+- Open disk images on network shares from Files. Double-clicking or using Open
+  With on an image on an SMB or other GVfs share used to fail with
+  "Unsupported image URI scheme"; the image is now opened through its GVfs
+  path, and an image that belongs to the sibling Acorn or Amiga mounter is
+  handed on to it as it is for local files.
+
 ## 0.2.1 - 2026-11-04
 
 ### Added
